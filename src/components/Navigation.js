@@ -1,38 +1,43 @@
 import { useState } from "react";
-import { Navbar, Container, Nav, NavDropdown, Offcanvas, Stack } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
     const [show, setShow] = useState(false);
-
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const handleDropdown = () => {
+        const dropContent = document.querySelector('.dropdown-content');
+        show
+        ? dropContent.classList.add('show')
+        : dropContent.classList.remove('show');
+        setShow(!show);
+    }
 
     return (
         <>
-            <Navbar key="lg" bg="dark" variant="dark" expand="lg" fixed="top">
-                <Container>
-                    <Navbar.Brand href="/">dani.sanz</Navbar.Brand>
-                    <Navbar.Toggle onClick={handleShow} />
-                    <Navbar.Offcanvas show={show} onHide={handleClose} id="navbar-nav" aria-labelledby="navbar-nav-label" placement="end">
-                        <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id="navar-nav-label">
-                                Menú
-                            </Offcanvas.Title>
-                        </Offcanvas.Header>
-                        <Offcanvas.Body className="justify-content-end">
-                        <Nav activeKey="1" onSelect={handleClose}>
-                            <Nav.Link href="/" eventKey="1">Home</Nav.Link>
-                            <NavDropdown title="Proyectos" id="projects-nav-dropdown" menuVariant="dark" >
-                                <NavDropdown.Item href="/pages_example" eventKey="2.1" className="fw-lighter">Pages Example</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/2.2" eventKey="2.2" className="fw-lighter">Another example</NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                        </Offcanvas.Body>
-                    </Navbar.Offcanvas>
-                </Container>
-            </Navbar>
-            
+            <nav className="main-nav">
+                <div className="nav-home">
+                    <Link to="/">.dnz</Link>
+                </div>
+                <a href="#collapse" className="collapsebtn">
+                    <div>
+                        <span className="collapse-line line-1" />
+                        <span className="collapse-line line-2" />
+                        <span className="collapse-line line-3" />
+                    </div>
+                </a>
+                <div id="collapse" className="collapse">
+                    <div className="collapse-header">
+                        <a href="#" id="closebtn">X</a>
+                    </div>
+                    <Link to="/">Home</Link>
+                    <div className="dropdown">
+                        <button className="dropbtn" onClick={handleDropdown}>Proyectos</button>
+                        <div className="dropdown-content">
+                            <Link to="/pages_example">Pages Example</Link>
+                            <Link to="/">Another Example</Link>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </>
     )
 } 
