@@ -2,13 +2,20 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const handleDropdown = () => {
         const dropContent = document.querySelector('.dropdown-content');
         show
         ? dropContent.classList.add('show')
         : dropContent.classList.remove('show');
         setShow(!show);
+    }
+
+    const smoothScroll = (e) => {
+        e.preventDefault();
+
+        const element = document.querySelector(e.target.getAttribute('href'));
+        element.scrollIntoView({block: 'end', behavior: 'smooth'});
     }
 
     return (
@@ -29,6 +36,7 @@ export default function Navigation() {
                         <a href="#" id="closebtn">X</a>
                     </div>
                     <Link to="/">Home</Link>
+                    <a href="#bio" onClick={smoothScroll}>Bio</a>
                     <div className="dropdown">
                         <button className="dropbtn" onClick={handleDropdown}>Proyectos</button>
                         <div className="dropdown-content">

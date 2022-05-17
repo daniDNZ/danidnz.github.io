@@ -17,7 +17,8 @@ body {
   font-family: var(--font-family);
   font-weight: lighter;
   background-color: var(--color-dark);
-  margin: 0;
+  margin: 0 auto;
+  overflow: auto;
 }
 
 h1 {
@@ -32,6 +33,7 @@ h1 {
 .monospace {
   font-family: 'Courier New', Courier, monospace;
 }
+
 
 /* Buttons */
 
@@ -53,13 +55,9 @@ a {
 /* NAVBAR */
 .main-nav {
   display: flex;
-  padding: 0 0.5rem;
+  padding: 0.5rem 0.5rem 1rem;
 
 }
-
-/* .main-nav a{
-  padding: 0 0.5rem;
-} */
 
 .main-nav button {
   display: inline-flex;
@@ -82,17 +80,30 @@ a {
 .collapse {
   display: block;
   position: absolute;
-  right: 100%;
+  overflow: hidden;
+  right: 0;
+  top: 0;
   height: 100vh;
-  width: 100vw;
-  padding: 0.5rem 1rem;
+  width: 0;
   background-color: var(--color-dark);
-  /* transition: right 0.4s ease-in 0s; */
+  transition: width 0.4s ease-in 0s; 
+}
+
+.collapse:target {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  
+  transition: width 0.4s ease 0s ;
 }
 
 .collapse a,
 .collapse button {
-  padding: 1rem 0;
+  padding: 1.5rem 1rem;
+}
+
+.collapse a {
+  display: block;
 }
 
 .collapse-header {
@@ -102,14 +113,7 @@ a {
 }
 
 .collapse-header a {
-  padding: 0;
-}
-
-.collapse:target {
-  display: block;
-  position: absolute;
-  right: 0;
-  transition: right 0.4s ease 0s;
+  padding: 1rem;
 }
 
 /* Collapse button lines */
@@ -140,7 +144,7 @@ a {
   display: none;
   position: relative;
   right: 0;
-  background-color: none;
+  background-color: transparent;
   padding: 0 1rem;
   min-width: 160px;
   border-left: 2px solid rgb(225, 210, 148);
@@ -151,7 +155,7 @@ a {
   min-width: 160px;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 720px) {
   .main-nav {
     height: 3rem;
     padding: 0.5rem 0.5rem 0 0.5rem;
@@ -185,11 +189,9 @@ a {
     position: relative;
     height: 100%;
     width: fit-content;
-    right: 0;
     padding: 0;
     gap: 1rem;
-    transition: right 0s ease;
-
+    overflow: visible;
   }
 
   div#collapse a,
@@ -198,16 +200,15 @@ a {
     padding-right: 0.5rem;
   }
 
-
   .dropdown-content {
     display: none;
     position: absolute;
+    background-color: var(--color-dark);
     right: 0;
-    background-color: none;
     min-width: 160px;
     border-left: 0;
     border-right: 2px solid rgb(225, 210, 148);
-    z-index: 1;
+    border-radius: 0 0 3px 3px;
   }
 
   .dropdown-content a {
@@ -217,10 +218,50 @@ a {
   }
 }
 
+/* HOME */
+.container {
+  display: flex;
+  overflow: auto; 
+  flex: none;
+}
+
+.container.y {
+  width: 100vw;
+  height: 100vh;
+  flex-flow: column nowrap;
+}
+.y.mandatory-scroll-snapping {
+  scroll-snap-type: y mandatory;
+}
+.container > section {
+  scroll-snap-align: center;
+  flex: none;
+}
+
+.y.container > section {
+  height: 100%;
+}
+
+@media screen and (min-width: 720px) {
+  .container {
+    overflow: hidden; 
+  }
+  
+  .container.y {
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+  }
+
+}
 /* HEADLINE */
 
 #headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: var(--color-light);
+  height: 100vh;
 }
 
 .headline-wrapper {
@@ -240,30 +281,56 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  text-align: start;
 }
 
 .monospace-headline {
-  padding: 0 3px;
+  display: block;
+  width: 0;
+  max-width: fit-content;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 1px 3px;
   color: var(--color-dark);
   background-color: var(--color-light);
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-right: 0.15em solid var(--color-dark);
+  animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.subtitle-headline {
+  font-weight: 100;
 }
 
 .social-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   padding-top: 3rem;
   text-align: center;
 }
 .social-row > div {
+  grid-column: 2;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 720px) {
   .flex-end {
     justify-content: end;
   }
@@ -272,4 +339,13 @@ a {
     margin: 0 0 0 2rem;
     text-align: start;
   }
+
+}
+
+/* BIO */
+
+#bio {
+  background-color: var(--color-light);
+  height: 100vh;
+  width: 100vw;
 }

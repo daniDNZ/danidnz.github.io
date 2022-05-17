@@ -13,8 +13,8 @@ export default function Headline() {
                     <div className="headline-text">
                         <div>
                             <span className="monospace monospace-headline">Hola!👋 me llamo </span>
-                            <h1 className="m-0">Dani Sanz</h1>
-                            <span className=""> y soy desarrollador web junior.</span>
+                            <h1 className="m-0 title-headline">Dani Sanz</h1>
+                            <span className="subtitle-headline"> y soy desarrollador web junior.</span>
                         </div>
                     </div>
                 </div>
