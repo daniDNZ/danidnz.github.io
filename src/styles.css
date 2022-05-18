@@ -448,6 +448,10 @@ body {
   }
 }
 
+.social__logo {
+  width: auto;
+}
+
 .social__logo:hover {
   color: #e1d294;
 }

@@ -258,8 +258,11 @@ body {
         }
     }
 
-    &__logo:hover {
-        color: $color-complementary;
+    &__logo {
+        width: auto;
+        &:hover {
+            color: $color-complementary;
+        }
     }
 
 }
