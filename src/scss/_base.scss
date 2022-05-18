@@ -1,0 +1,181 @@
+/*
+    RESET
+*/
+// Colors
+$colors: (
+    'dark'          : rgb(40, 43, 56),
+    'light'         : rgb(251, 238, 243),
+    'complementary' : rgb(225, 210, 148),
+);
+
+// Fonts
+$fonts: (
+    // 'primary'   : (Verdana, Geneva, Tahoma, sans-serif),
+    'primary'   : (-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                    sans-serif),
+    'monospace' : ('Courier New', Courier, monospace),
+);
+
+// Variables
+$color-primary          : map-get($colors, 'dark' );
+$color-secondary        : map-get($colors, 'light' );
+$color-complementary    : map-get($colors, 'complementary' );
+
+// Fonts
+$font-primary: map-get($fonts, 'primary' );
+$font-monospace: map-get($fonts, 'monospace' );
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+    // :root {
+    $color-primary: map-get($colors, 'dark' );
+    $color-scondary: map-get($colors, 'light' );
+    // }
+}
+
+// High Contrast
+@media (prefers-contrast: high) {
+    // :root {
+    $color-primary: black;
+    $color-scondary: white;
+    // }
+}
+
+// Reduce Motions
+@media (prefers-reduced-motion: reduce) {
+
+    // Better complete selector
+    * {
+        animation: none;
+        transition: none;
+    }
+}
+
+// Margins and paddings
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+// Img problems
+img,
+picture,
+video,
+iframe,
+figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /* optional */
+    object-fit: cover;
+    /* optional */
+    object-position: center center;
+}
+
+// Reset <a>
+a {
+    display: block;
+}
+
+// ... Not in <p>
+p a {
+    display: inline;
+}
+
+// Remove <li> dots
+li {
+    list-style-type: none;
+}
+
+// Soft anchors
+html {
+    scroll-behavior: smooth;
+}
+
+// Deactivate default styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+// Pseudo
+blockquote::before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+// Select text
+::selection {
+    background-color: $color-secondary;
+    color: $color-primary;
+}
+
+// Typography and forms
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+    /* optional */
+    appearance: none;
+}
+
+// Reset tables
+table,
+tr,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// SVG problems
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+// General Typo
+body {
+    min-height  : 100vh;
+    font-size   : 1rem;
+    font-family: $font-primary;
+    color: $color-secondary;
+    background-color: $color-primary;
+    /* optional */ line-height: 1.4em;
+    /* optional */ hyphens: auto;
+    /* optional */ font-smooth: always;
+    /* optional */ -webkit-font-smoothing: antialiased;
+    /* optional */ -moz-osx-font-smoothing: grayscale;
+}

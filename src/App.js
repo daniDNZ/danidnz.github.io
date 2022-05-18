@@ -1,4 +1,5 @@
-import './css/App.css';
+// import './css/App.css';
+import './styles.css';
 import Navigation from './components/Navigation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -7,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <header className="App-header">
+        <header className="header">
           <Navigation />
         </header>
-        <main>
+        <main className="main">
 
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -18,7 +19,7 @@ function App() {
           </Routes>
 
         </main>
-        <footer>
+        <footer className="footer">
 
         </footer>
       </BrowserRouter>

@@ -1,0 +1,295 @@
+body {
+    color: transparent;
+    animation: color 1s steps(50) 0s 1 normal both;
+}
+
+// HEADER
+.nav {
+
+    @include flex(row, nowrap, center, center);
+    position: fixed;
+    width: 100vw;
+    background-color: $color-primary;
+
+    &__a {
+        padding: 0.5em;
+
+        &:hover {
+            color: $color-primary;
+            background-color: $color-secondary;
+        }
+
+        &--brand {
+            margin-right: auto;
+
+            @include responsive(768px) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.collapse {
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 0;
+    background-color: $color-primary;
+    transition: width 0.2s ease-in 0s;
+
+    @include responsive(768px) {
+        @include flex(row, nowrap, center, center);
+
+        position: relative;
+        height: 100%;
+        width: fit-content;
+        // margin: 0  auto 0 0;
+        // gap: 1rem;
+        overflow: visible;
+    }
+
+    &:target {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        transition: width 0.2s ease-in 0s;
+    }
+
+    &__header {
+        @include flex(row, nowrap, flex-end, center);
+        padding: 0.5em;
+
+        @include responsive(768px) {
+            display: none;
+        }
+    }
+}
+
+.collapse-btn {
+    @include flex(column, nowrap, center, center);
+    gap: 0.4em;
+
+    &__line {
+        display: block;
+        height: 1px;
+        width: 20px;
+        border: 1px solid;
+    }
+
+    @include responsive(768px) {
+        display: none;
+    }
+}
+
+.dropdown {
+
+    &__btn {
+        width: 100%;
+        text-align: start;
+    }
+
+    &__content {
+        display: none;
+        position: relative;
+        right: 0;
+        background-color: transparent;
+        padding: 0 1em;
+        min-width: 160px;
+        border-left: 2px solid $color-complementary;
+
+        @include responsive(768px) {
+            position: absolute;
+            background-color: $color-primary;
+            padding: 0;
+            border-left: 0;
+            border-right: 2px solid $color-complementary;
+            border-radius: 0 0 3px 3px;
+            text-align: end;
+        }
+    }
+}
+
+
+
+// MAIN
+
+// ... Headline
+.headline {
+    @include flex(column, nowrap, center, center);
+    height: 100vh;
+    gap: 2em;
+
+}
+
+.content {
+    @include grid(2, 0);
+
+    &__photo {
+        width: 100%;
+        max-width: 20em;
+        height: 100%;
+        animation: blop 0.1s steps(50) 0.2s 1 normal both;
+    }
+
+    &__text {
+        @include flex (column, nowrap, center, start);
+        margin: 0 auto;
+    }
+
+    &__pretitle {
+        display: block;
+        margin-bottom: 0.5em;
+        width: 0;
+        max-width: fit-content;
+        overflow: hidden;
+        white-space: nowrap;
+        font-weight: 600;
+        background-color: $color-secondary;
+        color: $color-primary;
+        border-right: 0.15em solid transparent;
+        animation: typing 2s steps(30) 1s 1 normal both, blink-3s 3s steps(1);
+    }
+
+    &__h1 {
+        display: block;
+        width: 0;
+        max-width: fit-content;
+        min-height: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid transparent;
+        animation: typing 2.5s steps(18) 3s 1 normal both, blink-3s 3s steps(1) 2s;
+    }
+
+    &__subtitle {
+        display: block;
+        width: 0;
+        max-width: fit-content;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid transparent;
+        animation: typing 2s steps(30) 5.5s 1 normal both, blink 1s steps(1) 4.5s infinite;
+    }
+
+    @keyframes blop {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink-3s {
+        0% {
+            border-color: $color-primary;
+        }
+
+        16% {
+            border-color: $color-secondary;
+        }
+
+        32% {
+            border-color: $color-primary;
+        }
+
+        48% {
+            border-color: $color-secondary;
+        }
+
+        64% {
+            border-color: $color-primary;
+        }
+
+        80% {
+            border-color: $color-secondary;
+        }
+    }
+
+    @keyframes blink {
+        0% {
+            border-color: $color-primary;
+        }
+
+        50% {
+            border-color: $color-secondary;
+        }
+    }
+}
+
+.social {
+    @include grid(3, 0);
+    width: 100%;
+
+    &__div {
+        @include flex( row, nowrap, center, center);
+        gap: 2em;
+
+        @include responsive( 768px ) {
+            grid-column: 2;
+        }
+    }
+
+    &__a {
+        font-size: 1.75em;
+        color: transparent;
+        animation: color 1s steps(50) 8s 1 normal both;
+    }
+
+    @keyframes color {
+        from {
+            color: transparent;
+        }
+        to {
+            color: $color-secondary;
+        }
+    }
+
+    &__logo:hover {
+        color: $color-complementary;
+    }
+
+}
+
+
+// ... Bio
+
+.bio {
+    @include flex(column, nowrap, center, center);
+
+    background-color: $color-secondary;
+    color: $color-primary;
+    min-height: 100vh;
+    padding: 0 2em;
+    @include responsive (768px) {
+            padding: 0 4em;
+    }
+
+    &__h1 {
+        align-self: flex-start;
+        margin-bottom: 2em ;
+        font-size: 3em;
+        
+    }
+
+    &__span {
+        max-width: 40em;
+    }
+
+    &__p {
+        margin-bottom: 2em;
+    }
+}
