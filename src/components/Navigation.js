@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { GiCrossMark } from "react-icons/gi";
+import { RiMenu4Line } from "react-icons/ri";
 
 export default function Navigation() {
     const [show, setShow] = useState(true);
@@ -16,13 +18,11 @@ export default function Navigation() {
             <nav className="nav">
                 <a href="#headline" className="nav__a nav__a--brand">.dnz</a>
                 <a href="#collapse" className="nav__a collapse-btn">
-                    <span className="collapse-btn__line" />
-                    <span className="collapse-btn__line" />
-                    <span className="collapse-btn__line" />
+                    <RiMenu4Line />
                 </a>
                 <div id="collapse" className="collapse">
                     <div className="collapse__header">
-                        <a href="#" className="collapse__close-btn">X</a>
+                        <a href="#" className="nav__a collapse__close-btn"><GiCrossMark /></a>
                     </div>
                     <a href="#bio" className="nav__a">bio_</a>
                     <div className="dropdown">

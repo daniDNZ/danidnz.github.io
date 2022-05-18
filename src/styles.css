@@ -105,7 +105,6 @@ td {
 }
 
 svg {
-  width: 100%;
   display: block;
   fill: currentColor;
 }
@@ -174,7 +173,8 @@ body {
 }
 
 .nav__a {
-  padding: 0.5em;
+  font-size: 1.2em;
+  padding: 1em 1em;
 }
 
 .nav__a:hover {
@@ -228,28 +228,12 @@ body {
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
-  padding: 0.5em;
 }
 
 @media screen and (min-width: 768px) {
   .collapse__header {
     display: none;
   }
-}
-
-.collapse-btn {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4em;
-}
-
-.collapse-btn__line {
-  display: block;
-  height: 1px;
-  width: 20px;
-  border: 1px solid;
 }
 
 @media screen and (min-width: 768px) {
@@ -290,8 +274,9 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   gap: 2em;
+  padding: 4em;
 }
 
 .content {
@@ -310,7 +295,6 @@ body {
 .content__photo {
   width: 100%;
   max-width: 20em;
-  height: 100%;
   animation: blop 0.1s steps(50) 0.2s 1 normal both;
 }
 
@@ -464,12 +448,12 @@ body {
   background-color: #fbeef3;
   color: #282b38;
   min-height: 100vh;
-  padding: 0 2em;
+  padding: 4em;
 }
 
 @media screen and (min-width: 768px) {
   .bio {
-    padding: 0 4em;
+    padding: 4em;
   }
 }
 
