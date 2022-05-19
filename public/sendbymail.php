@@ -1,4 +1,5 @@
-<?php
+header("Location: https://www.danisanzdev.com/");
+<!-- <?php
 if(isset($_POST['email'])) 
 {
 
@@ -12,6 +13,7 @@ if(isset($_POST['email']))
     !isset($_POST['message'])) 
     {
         $sent = false;
+        header("Location: https://www.danisanzdev.com/");
         die();
     }
 
@@ -27,11 +29,7 @@ if(isset($_POST['email']))
     @mail($email_to, $email_subject, $email_message, $headers);
 
     $sent = true;
-} ?>
-<script>
-    const sent = <?php $sent ?>
 
-    if(sent){
-        window.location.replace("https://danisanzdev.com/#contact");
-    }
-</script>
+    header("Location: https://www.danisanzdev.com/");
+    die();
+} ?> -->
