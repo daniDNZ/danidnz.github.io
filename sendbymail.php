@@ -11,8 +11,7 @@ if(isset($_POST['email']))
     !isset($_POST['email']) ||
     !isset($_POST['message'])) 
     {
-        echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-        echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+        $sent = false;
         die();
     }
 
@@ -27,5 +26,12 @@ if(isset($_POST['email']))
     'X-Mailer: PHP/' . phpversion();
     @mail($email_to, $email_subject, $email_message, $headers);
 
-    echo "¡El formulario se ha enviado con éxito!";
-}
+    $sent = true;
+} ?>
+<script>
+    const sent = <?php $sent ?>
+
+    if(sent){
+        window.location.replace("https://danisanzdev.com/#contact");
+    }
+</script>
