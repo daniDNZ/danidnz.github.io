@@ -39,3 +39,24 @@ body {
     }
 }
 
+
+// SECTIONS
+
+.section {
+    @include flex(column, nowrap, center, center);
+    padding: 4em 2em;
+
+    @include responsive (768px) {
+        padding: 4em;
+    }
+
+    &__container {
+    max-width: 60em;
+    }
+    
+    &__h1 {
+        align-self: flex-start;
+        margin-bottom: 2em ;
+        font-size: 3em;
+    }
+}

@@ -150,6 +150,7 @@ body {
         min-height: 1em;
         overflow: hidden;
         white-space: nowrap;
+        padding-top: 0.1em;
         border-right: 0.15em solid transparent;
         animation: typing 2.5s steps(18) 3s 1 normal both, blink-3s 3s steps(1) 2s;
     }
@@ -262,29 +263,41 @@ body {
 // ... Bio
 
 .bio {
-    @include flex(column, nowrap, center, center);
-
     background-color: $color-secondary;
     color: $color-primary;
-    min-height: 100vh;
-    padding: 4em;
-
-    @include responsive (768px) {
-            padding: 4em;
-    }
-
-    &__h1 {
-        align-self: flex-start;
-        margin-bottom: 2em ;
-        font-size: 3em;
-        
-    }
-
-    &__span {
-        max-width: 40em;
-    }
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20em;
 
     &__p {
+        max-width: 40em;
         margin-bottom: 2em;
     }
+}
+
+
+// ... Works
+
+.works {
+    // background-color: $color-secondary;
+    color: $color-primary;
+
+    &__container {
+        padding: 2em;
+        margin-top: -20em;
+        background-color: burlywood;
+        border-radius: 10px;
+    }
+}
+
+.gallery {
+    @include grid(3, 3em);
+}
+
+.card {
+    background-color: $color-complementary;
+    height: 10em;
+    width: 15em;
+    border-radius: 10px;
+
 }

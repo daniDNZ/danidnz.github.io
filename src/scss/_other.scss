@@ -1,11 +1,14 @@
-a:hover {
-    color: $color-complementary;
-}
-
+// UTILITIES
 .show {
     display: block;
 }
 
+// GLOBAL PSEUDO
+a:hover {
+    color: $color-complementary;
+}
+
+// OTHERS
 .text--monospace {
     font-family: $font-monospace;
 }
