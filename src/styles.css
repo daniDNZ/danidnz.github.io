@@ -172,6 +172,11 @@ h6 {
 }
 
 .section__container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   max-width: 60em;
 }
 
@@ -194,6 +199,7 @@ body {
   position: fixed;
   width: 100vw;
   background-color: #282b38;
+  z-index: 1000;
 }
 
 .nav__a {
@@ -479,7 +485,9 @@ body {
 }
 
 .works {
+  background-color: #fbeef3;
   color: #282b38;
+  border-top: 3px dashed #e1d294;
 }
 
 .works__container {
@@ -543,6 +551,34 @@ body {
   color: transparent;
   border-radius: 10px;
   transition: 0.2s ease-in 0s;
+}
+
+.contact {
+  background-color: #fbeef3;
+  color: #282b38;
+}
+
+.form__label {
+  margin: 0.5em 0;
+}
+
+.form__input {
+  padding: 0.5em;
+  border-radius: 10px;
+  border: 1px dashed #e1d294;
+}
+
+.form__button {
+  padding: 0.5em;
+  margin-top: 1em;
+  color: #282b38;
+  border-radius: 5px;
+  border: 1px dashed #e1d294;
+}
+
+.form__button:hover {
+  background-color: burlywood;
+  color: #fbeef3;
 }
 
 .show {

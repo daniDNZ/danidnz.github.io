@@ -10,6 +10,7 @@ body {
     position: fixed;
     width: 100vw;
     background-color: $color-primary;
+    z-index: 1000;
 
     &__a {
         font-size: 1.2em;
@@ -281,8 +282,9 @@ body {
 // ... Works
 
 .works {
-    // background-color: $color-secondary;
+    background-color: $color-secondary;
     color: $color-primary;
+    border-top: 3px dashed $color-complementary;
 
     &__container {
         
@@ -349,3 +351,36 @@ body {
     }
 
 }
+
+// ... Contact
+
+.contact {
+    background-color: $color-secondary;
+    color: $color-primary;
+}
+
+.form {
+    &__label {
+        margin: 0.5em 0;
+    }
+
+    &__input {
+        padding: 0.5em;
+        border-radius: 10px;
+        border: 1px dashed $color-complementary;
+    }
+
+    &__button {
+        padding: 0.5em;
+        margin-top: 1em;
+        color: $color-primary;
+        border-radius: 5px;
+        border: 1px dashed $color-complementary;
+
+        &:hover {
+            background-color: burlywood;
+            color: $color-secondary;
+        }
+    }
+}
+

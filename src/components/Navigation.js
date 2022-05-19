@@ -32,6 +32,7 @@ export default function Navigation() {
                             <Link to="/" className="nav__a">/another_ex</Link>
                         </div>
                     </div>
+                    <a href="#contact" className="nav__a">contact_</a>
                 </div>
             </nav>
         </>

@@ -51,7 +51,9 @@ body {
     }
 
     &__container {
-    max-width: 60em;
+        @include flex(column, nowrap, center, center);
+        width: 100%;
+        max-width: 60em;
     }
     
     &__h1 {
