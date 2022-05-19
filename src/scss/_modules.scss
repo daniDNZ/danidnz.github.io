@@ -124,7 +124,7 @@ body {
     }
 
     &__text {
-        @include flex (column, nowrap, center, start);
+        @include flex (column, nowrap, center, flex-start);
 
         margin: 0 auto;
     }
@@ -227,10 +227,10 @@ body {
     width: 100%;
 
     &__div {
-        @include flex( row, nowrap, center, center);
+        @include flex(row, nowrap, center, center);
         gap: 2em;
 
-        @include responsive( 768px ) {
+        @include responsive(768px) {
             grid-column: 2;
         }
     }
@@ -245,6 +245,7 @@ body {
         from {
             color: transparent;
         }
+
         to {
             color: $color-secondary;
         }
@@ -252,6 +253,7 @@ body {
 
     &__logo {
         width: auto;
+
         &:hover {
             color: $color-complementary;
         }
@@ -267,7 +269,7 @@ body {
     color: $color-primary;
     display: flex;
     flex-direction: column;
-    padding-bottom: 20em;
+    padding-bottom: 15em;
 
     &__p {
         max-width: 40em;
@@ -283,21 +285,67 @@ body {
     color: $color-primary;
 
     &__container {
+        
         padding: 2em;
-        margin-top: -20em;
+        margin-top: -15em;
         background-color: burlywood;
         border-radius: 10px;
     }
 }
 
 .gallery {
-    @include grid(3, 3em);
+    @include flex(row, wrap, center, center);
+    width: 100%;
+    gap: 2em;
 }
 
 .card {
+    position: relative;
+    overflow: hidden;
     background-color: $color-complementary;
     height: 10em;
     width: 15em;
+    // border: 0.2em solid $color-secondary;
     border-radius: 10px;
+    line-height: 1.8em;
+    transition: 0.2s ease-in 0s, color 0.2s ease-in 0s;
+    
+    &:hover {
+        
+        & > .card__thumb {
+            transform: scale(1.1);
+            transition: 0.2s ease-in 0s;
+        }
+        
+        & > .card__figcaption {
+            background-color: $color-primary;
+            color: $color-secondary;
+            transition: 0.2s ease-in 0s;
+        }
+    }
+    
+    &__thumb {
+        position: absolute;
+        transform: scale(1);
+        height: 10em;
+        width: 15em;
+        border-radius: 10px;
+        opacity: 1;
+        transition: 0.2s ease-in 0s;
+    }
+    
+    
+    
+    &__figcaption {
+        @include flex( column, nowrap, space-between, flex-start);
+        position: absolute;
+        height: 100%;
+        padding: 1em;
+        z-index: 1;
+        background-color: transparent;
+        color: transparent;
+        border-radius: 10px;
+        transition: 0.2s ease-in 0s;
+    }
 
 }

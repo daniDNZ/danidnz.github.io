@@ -326,7 +326,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   margin: 0 auto;
 }
 
@@ -470,7 +470,7 @@ body {
   color: #282b38;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20em;
+  padding-bottom: 15em;
 }
 
 .bio__p {
@@ -484,29 +484,65 @@ body {
 
 .works__container {
   padding: 2em;
-  margin-top: -20em;
+  margin-top: -15em;
   background-color: burlywood;
   border-radius: 10px;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0em;
-}
-
-@media screen and (min-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3em;
-  }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2em;
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   background-color: #e1d294;
   height: 10em;
   width: 15em;
   border-radius: 10px;
+  line-height: 1.8em;
+  transition: 0.2s ease-in 0s, color 0.2s ease-in 0s;
+}
+
+.card:hover > .card__thumb {
+  transform: scale(1.1);
+  transition: 0.2s ease-in 0s;
+}
+
+.card:hover > .card__figcaption {
+  background-color: #282b38;
+  color: #fbeef3;
+  transition: 0.2s ease-in 0s;
+}
+
+.card__thumb {
+  position: absolute;
+  transform: scale(1);
+  height: 10em;
+  width: 15em;
+  border-radius: 10px;
+  opacity: 1;
+  transition: 0.2s ease-in 0s;
+}
+
+.card__figcaption {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  height: 100%;
+  padding: 1em;
+  z-index: 1;
+  background-color: transparent;
+  color: transparent;
+  border-radius: 10px;
+  transition: 0.2s ease-in 0s;
 }
 
 .show {
