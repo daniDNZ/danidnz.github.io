@@ -25,7 +25,7 @@
                 $email_message = "Detalles del formulario de contacto:\n\n";
                 $email_message .= "Nombre: " . $_POST['name'] . "\n";
                 $email_message .= "E-mail: " . $_POST['email'] . "\n\n";
-                $email_message .= "Mensaje: " . $_POST['message'] . "\n\n";
+                $email_message .= "Mensaje: \n\n" . $_POST['message'] . "\n\n";
                 
                 // Ahora se envía el e-mail usando la función mail() de PHP
                 $headers = 'From: '.$email_from."\r\n".
