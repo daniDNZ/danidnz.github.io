@@ -54,6 +54,7 @@ body {
 
     &__container {
         @include flex(column, nowrap, center, center);
+        position: relative;
         width: 100%;
         max-width: 60em;
     }

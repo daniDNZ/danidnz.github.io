@@ -363,13 +363,52 @@ body {
 .contact {
     background-color: $color-secondary;
     color: $color-primary;
-
+    position: relative;
+    
     &__h1 {
         margin-bottom: 0.5em;
     }
+    
+    
 }
 
+.alert {
+    
+    @include flex(row, nowrap, center, center);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2.4em;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 5px;
+    color: transparent;
+    transition: 0.2s ease-in 0s;
+    
+    &--active {
+        width: 10em;
+        color: #3a7260;
+        border-left: 0.2em solid #489279;
+        transition: 0.2s ease-in 0s;
+    }
+    
+    &--success {
+        color: #3a7260;
+        background-color: #a7e6d1 !important;
+        border-left: 0.2em solid #489279;
+    }
+    
+    &--fail {
+        color: #723a3a;
+        background-color: #e6a7a7;
+        border-left: 0.2em solid #924848;
+    }
+}
+
+
 .form {
+    position: relative;
     
     &__input {
         width: 100%;
@@ -466,7 +505,7 @@ body {
         padding: 1em;
         
         @include responsive(768px) {
-            @include flex(row, nowrap, start, center);
+            @include flex(row, nowrap, flex-start, center);
             
         }
         

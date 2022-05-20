@@ -190,6 +190,7 @@ i {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 100%;
   max-width: 60em;
 }
@@ -589,10 +590,51 @@ body {
 .contact {
   background-color: #fbeef3;
   color: #282b38;
+  position: relative;
 }
 
 .contact__h1 {
   margin-bottom: 0.5em;
+}
+
+.alert {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2.4em;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 5px;
+  color: transparent;
+  transition: 0.2s ease-in 0s;
+}
+
+.alert--active {
+  width: 10em;
+  color: #3a7260;
+  border-left: 0.2em solid #489279;
+  transition: 0.2s ease-in 0s;
+}
+
+.alert--success {
+  color: #3a7260;
+  background-color: #a7e6d1 !important;
+  border-left: 0.2em solid #489279;
+}
+
+.alert--fail {
+  color: #723a3a;
+  background-color: #e6a7a7;
+  border-left: 0.2em solid #924848;
+}
+
+.form {
+  position: relative;
 }
 
 .form__input {
@@ -700,7 +742,7 @@ body {
   .footer__section--social {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
   }
 }
