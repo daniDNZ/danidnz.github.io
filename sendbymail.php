@@ -41,8 +41,7 @@
 
         return json_encode([
             'sent' => $sent,
-            'message' => $message,
-            'email' => $email_from
+            'message' => $message
         ]);
     }
 
