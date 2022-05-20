@@ -32,6 +32,8 @@ h3 { font-size: 1.7em; }
 h4 { font-size: 1.5em; }
 h5 { font-size: 1.4em; }
 h6 { font-size: 1.2em; }
+b { font-weight: bold;}
+i { font-style: oblique;}
 
 body {
     @include responsive( 768px ) {
@@ -60,5 +62,14 @@ body {
         align-self: flex-start;
         margin-bottom: 2em ;
         font-size: 3em;
+    }
+
+    &__subtitle {
+        align-self: flex-start;
+        padding: 0.2em 0.5em;
+        margin-bottom: 4em;
+        background-color: $color-primary;
+        color: $color-secondary;
+        font-weight: 500;
     }
 }

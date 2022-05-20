@@ -151,6 +151,13 @@ label {
     appearance: none;
 }
 
+// Input Focus
+textarea:focus,
+input:focus,
+input[type]:focus {
+    outline: 0 none;
+}
+
 // Reset tables
 table,
 tr,

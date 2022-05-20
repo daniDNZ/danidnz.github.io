@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { GiCrossMark } from "react-icons/gi";
+import { MdClose } from "react-icons/md";
 import { RiMenu4Line } from "react-icons/ri";
 
 export default function Navigation() {
@@ -22,14 +22,15 @@ export default function Navigation() {
                 </a>
                 <div id="collapse" className="collapse">
                     <div className="collapse__header">
-                        <a href="#" className="nav__a collapse__close-btn"><GiCrossMark /></a>
+                        <a href="#" className="nav__a collapse__close-btn"><MdClose /></a>
                     </div>
                     <a href="#bio" className="nav__a">bio_</a>
                     <div className="dropdown">
                         <button className="nav__a dropdown__btn" onClick={handleDropdown}>works_</button>
                         <div className="dropdown__content">
-                            <Link to="/pages_example" className="nav__a">/example</Link>
-                            <Link to="/" className="nav__a">/another_ex</Link>
+                            <a href="#works" className="nav__a">/all</a>
+                            {/* <Link to="/pages_example" className="nav__a">/example</Link>
+                            <Link to="/" className="nav__a">/another_ex</Link> */}
                         </div>
                     </div>
                     <a href="#contact" className="nav__a">contact_</a>

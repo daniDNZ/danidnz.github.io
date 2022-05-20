@@ -284,7 +284,7 @@ body {
 .works {
     background-color: $color-secondary;
     color: $color-primary;
-    border-top: 3px dashed $color-complementary;
+    border-top: 0.5em dashed burlywood;
 
     &__container {
         
@@ -296,60 +296,66 @@ body {
 }
 
 .gallery {
-    @include flex(row, wrap, center, center);
+    @include flex(column, nowrap, center, center);
     width: 100%;
     gap: 2em;
+
+    @include responsive(768px) {
+        padding: 0 4em 4em 4em;
+    }
 }
 
 .card {
     position: relative;
     overflow: hidden;
-    background-color: $color-complementary;
-    height: 10em;
-    width: 15em;
-    // border: 0.2em solid $color-secondary;
+    min-height: 10em;
+    min-width: 15em;
+    max-width: 40em;
+    aspect-ratio: 16 / 10;
     border-radius: 10px;
     line-height: 1.8em;
     transition: 0.2s ease-in 0s, color 0.2s ease-in 0s;
     
     &:hover {
         
-        & > .card__thumb {
-            transform: scale(1.1);
-            transition: 0.2s ease-in 0s;
-        }
-        
-        & > .card__figcaption {
-            background-color: $color-primary;
-            color: $color-secondary;
-            transition: 0.2s ease-in 0s;
+        @include responsive(768px) {
+            
+            & > .card__thumb {
+                transform: scale(1.1);
+                opacity: 0;
+                transition: 0.2s ease-in 0s;
+            }
+            
+            & > .card__hover {
+                opacity: 1;
+                transition: 0.2s ease-in 0s;
+            }
+            
         }
     }
     
     &__thumb {
         position: absolute;
         transform: scale(1);
-        height: 10em;
-        width: 15em;
+        border-radius: 10px;
+        opacity: 0;
+        
+        @include responsive(768px) {
+            opacity: 1;
+            transition: 0.2s ease-in 0s;
+        }
+    }
+    &__hover {
+        position: absolute;
         border-radius: 10px;
         opacity: 1;
-        transition: 0.2s ease-in 0s;
+        
+        @include responsive(768px) {
+            opacity: 0;
+            transition: 0.2s ease-in 0s;
+        }
     }
     
-    
-    
-    &__figcaption {
-        @include flex( column, nowrap, space-between, flex-start);
-        position: absolute;
-        height: 100%;
-        padding: 1em;
-        z-index: 1;
-        background-color: transparent;
-        color: transparent;
-        border-radius: 10px;
-        transition: 0.2s ease-in 0s;
-    }
-
 }
 
 // ... Contact
@@ -357,30 +363,116 @@ body {
 .contact {
     background-color: $color-secondary;
     color: $color-primary;
+
+    &__h1 {
+        margin-bottom: 0.5em;
+    }
 }
 
 .form {
-    &__label {
-        margin: 0.5em 0;
-    }
-
+    
     &__input {
+        width: 100%;
         padding: 0.5em;
         border-radius: 10px;
-        border: 1px dashed $color-complementary;
+        border: 2px dashed burlywood;
+        color: $color-primary;
+        transition: transform .2s cubic-bezier(.34,1.56,.64,1),
+        box-shadow .2s cubic-bezier(.34,1.56,.64,1);
+
+        
+        &:focus,
+        &[type]:focus {
+            transform: translate(-.3em, -.3em);
+            border-color: #489279;
+            box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
+            transition: transform .2s cubic-bezier(.34,1.56,.64,1),
+            box-shadow .2s cubic-bezier(.34,1.56,.64,1);
+            
+        }
+
+        &::placeholder {
+            color:#489279;
+        }
+        
+        @include responsive( 768px ){
+            width: fit-content;
+            
+            &--textarea {
+                width: 100%;
+            }
+        }
+        
+    }
+    
+    &__button {
+        padding: 0.5em 1em;
+        margin-top: 1em;
+        color:rgba(72, 146, 121, 0.6);
+        border-radius: 5px;
+        border: 2px dashed burlywood;
+        transition: transform .2s cubic-bezier(.34,1.56,.64,1),
+        box-shadow .2s cubic-bezier(.34,1.56,.64,1);
+        
+        &:hover {
+            border: 2px dashed burlywood;
+            border-color: #489279;
+            transform: translate(-.3em, -.3em);
+            box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
+            transition: transform .2s cubic-bezier(.34,1.56,.64,1),
+            box-shadow .2s cubic-bezier(.34,1.56,.64,1);
+        }
     }
 
-    &__button {
-        padding: 0.5em;
-        margin-top: 1em;
-        color: $color-primary;
-        border-radius: 5px;
-        border: 1px dashed $color-complementary;
-
-        &:hover {
-            background-color: burlywood;
-            color: $color-secondary;
-        }
+    &__fieldset {
+        @include flex(row, wrap, flex-start, center);
+        gap: 1em;
+        margin: 1em 0;
     }
 }
 
+// FOOTER
+
+.footer {
+    background-color: $color-primary;
+    border-top: 1em solid burlywood;
+
+    @include grid(2, 0);
+    padding: 2em 1em;
+    justify-content: center;
+    align-content: center;
+
+    &__section--thanks {
+        padding: 1em;
+        text-align: center;
+        border-bottom: 0.2em solid rgba(72, 146, 121, 0.6);
+        
+        @include responsive(768px) {
+            text-align: end;
+            border-right: 0.2em solid rgba(72, 146, 121, 0.6);
+            border-bottom: none;
+        }
+    }
+    
+    &__text {
+        font-weight: 200;
+        
+    }
+    
+    &__section--social {
+        @include flex(row, nowrap, center, center);
+        gap: 1em;
+        margin: 0.5em 0;
+        padding: 1em;
+        
+        @include responsive(768px) {
+            @include flex(row, nowrap, start, center);
+            
+        }
+        
+    }
+
+    &__sm {
+        font-size: 2em;
+    }
+}

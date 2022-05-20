@@ -40,26 +40,8 @@ export default function Works() {
                     <h1 className="section__h1 text--monospace">Works/</h1>
                     <div className="works__gallery gallery">
                         <figure className="gallery__card card">
-                            <img className="card__thumb" src="/img/works_thumb-marabu.jpg" alt="Clínica veterinaria" />
-                            <figcaption className="card__figcaption">
-                                <h4 className="card__h4">
-                                    Web veterinaria + app de gestión de pacientes
-                                </h4>
-                                <a href="#" className="card__a">
-                                    Ver Demo {">"}
-                                </a>
-                            </figcaption>
-                        </figure>
-                        <figure className="gallery__card card">
-                            <img className="card__thumb" src="/img/works1.jpg" alt="Clínica veterinaria" />
-                            <figcaption className="card__figcaption">
-                                <h4 className="card__h4">
-                                    Web veterinaria + app de gestión de pacientes
-                                </h4>
-                                <a className="card__a">
-                                    Ver Demo {">"}
-                                </a>
-                            </figcaption>
+                            <img className="card__thumb" src="/img/works1/thumbnail.jpg" alt="Clínica veterinaria" />
+                            <img className="card__hover" src="/img/works1/thumbnailHover.jpg" alt="Clínica veterinaria" />
                         </figure>
                     </div>
                 </div>
