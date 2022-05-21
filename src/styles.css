@@ -208,6 +208,7 @@ i {
   background-color: #282b38;
   color: #fbeef3;
   font-weight: 500;
+  border-radius: 5px;
 }
 
 body {
@@ -347,17 +348,33 @@ body {
 }
 
 .content__photo {
-  width: 100%;
-  max-width: 20em;
+  max-width: 420px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
   animation: blop 0.1s steps(50) 0.2s 1 normal both;
+}
+
+.content__memoji {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .content__text {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  font-size: 1.5em;
+  line-height: 100%;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .content__text {
+    align-items: flex-start;
+  }
 }
 
 .content__pretitle {
@@ -539,52 +556,42 @@ body {
 .card {
   position: relative;
   overflow: hidden;
-  min-height: 10em;
-  min-width: 15em;
-  max-width: 40em;
-  aspect-ratio: 16 / 10;
+  max-width: 720px;
+  aspect-ratio: 3 / 2;
+  background-color: #3a7260;
   border-radius: 10px;
   line-height: 1.8em;
   transition: 0.2s ease-in 0s, color 0.2s ease-in 0s;
 }
 
 @media screen and (min-width: 768px) {
-  .card:hover > .card__thumb {
+  .card:hover > .card__img--thumb {
     transform: scale(1.1);
     opacity: 0;
     transition: 0.2s ease-in 0s;
   }
-  .card:hover > .card__hover {
+  .card:hover > .card__img--hover {
     opacity: 1;
     transition: 0.2s ease-in 0s;
   }
 }
 
-.card__thumb {
+.card__img {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.card__img--thumb {
   transform: scale(1);
-  border-radius: 10px;
-  opacity: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .card__thumb {
-    opacity: 1;
-    transition: 0.2s ease-in 0s;
-  }
-}
-
-.card__hover {
-  position: absolute;
-  border-radius: 10px;
   opacity: 1;
+  transition: 0.2s ease-in 0s;
 }
 
-@media screen and (min-width: 768px) {
-  .card__hover {
-    opacity: 0;
-    transition: 0.2s ease-in 0s;
-  }
+.card__img--hover {
+  opacity: 0;
+  transition: 0.2s ease-in 0s;
 }
 
 .contact {
@@ -595,6 +602,28 @@ body {
 
 .contact__h1 {
   margin-bottom: 0.5em;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0em;
+}
+
+@media screen and (min-width: 768px) {
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+}
+
+.contact__text {
+  align-self: flex-start;
+  padding: 0.2em 0.5em;
+  margin-bottom: 4em;
+  background-color: #282b38;
+  color: #fbeef3;
+  font-weight: 500;
 }
 
 .alert {

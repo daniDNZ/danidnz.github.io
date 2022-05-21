@@ -10,10 +10,10 @@ export default function Footer() {
                     </p>
                 </div>
                 <div className="footer__section footer__section--social">
-                    <a href="https://www.linkedin.com/in/danielsanzelguer/" className="footer__sm">
+                    <a href="https://www.linkedin.com/in/danielsanzelguer/" className="footer__sm" alt="LinkedIn">
                         <BsLinkedin className="social__logo" />
                     </a>
-                    <a href="https://github.com/daniDNZ" className="footer__sm">
+                    <a href="https://github.com/daniDNZ" className="footer__sm" alt="GitHub">
                         <BsGithub className="social__logo" />
                     </a>
                 </div>

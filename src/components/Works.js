@@ -6,27 +6,25 @@ export default function Works() {
     useEffect(() => {
         const thumbTransition = (e) => {
             const thumb = e.currentTarget.children[0];
-            const figcaption = e.currentTarget.children[1];
+            const thumbHover = e.currentTarget.children[1];
             
             if (clicked) {
     
                 thumb.style.transform = "scale(1)"; 
-                figcaption.style.backgroundColor = "transparent";
-                figcaption.style.color = "transparent";
+                thumbHover.style.opacity = "0";
                 setClicked(false);
-    
+                
             } else {
-    
+                
                 thumb.style.transform = "scale(1.1)"; 
-                figcaption.style.backgroundColor = "#282b38";
-                figcaption.style.color = "#fbeef3";
+                thumbHover.style.opacity = "1";
                 setClicked(true);
             }
         }
 
         const figcaptionsHTMLCol = document.querySelectorAll('.card');
         figcaptionsHTMLCol.forEach(element => {
-            element.addEventListener('touchstart', thumbTransition); 
+            element.addEventListener('touchstart', thumbTransition, {passive: true}); 
         });
     })
 
@@ -40,8 +38,8 @@ export default function Works() {
                     <h1 className="section__h1 text--monospace">Works/</h1>
                     <div className="works__gallery gallery">
                         <figure className="gallery__card card">
-                            <img className="card__thumb" src="/img/works1/thumbnail.jpg" alt="Clínica veterinaria" />
-                            <img className="card__hover" src="/img/works1/thumbnailHover.jpg" alt="Clínica veterinaria" />
+                            <img className="card__img card__img--thumb" src="/img/works1/thumbnail.webp" width="720" height="480" alt="Clínica veterinaria" />
+                            <img className="card__img card__img--hover" src="/img/works1/thumbnailHover.webp" width="720" height="480" alt="Clínica veterinaria" />
                         </figure>
                     </div>
                 </div>

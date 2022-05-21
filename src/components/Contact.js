@@ -56,7 +56,7 @@ export default function Contact() {
             <section id="contact" className="section contact">
                 <div className="section__container">
                     <h1 className="section__h1 contact__h1 text--monospace">Contact/</h1>
-                    <p className="section__subtitle text--monospace">Déjame un mensaje 💬</p>
+                    <p className="section__subtitle text--monospace">hey! déjame un mensaje 💬</p>
                     <form method="post" className="contact__form form" onSubmit={handleForm} >
                         <fieldset className="form__fieldset">
                             <input type="text" name="name" id="name" placeholder="_name" className="form__input" required />
