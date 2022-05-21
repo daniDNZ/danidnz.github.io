@@ -216,6 +216,23 @@ body {
   animation: color 1s steps(50) 0s 1 normal both;
 }
 
+.button {
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  width: fit-content;
+  color: rgba(72, 146, 121, 0.6);
+  border-radius: 5px;
+  border: 2px dashed burlywood;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.button:hover {
+  border-color: #489279;
+  transform: translate(-0.3em, -0.3em);
+  box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 .nav {
   display: flex;
   flex-flow: row nowrap;
@@ -517,7 +534,6 @@ body {
   color: #282b38;
   display: flex;
   flex-direction: column;
-  padding-bottom: 15em;
 }
 
 .bio__p {
@@ -529,13 +545,6 @@ body {
   background-color: #fbeef3;
   color: #282b38;
   border-top: 0.5em dashed burlywood;
-}
-
-.works__container {
-  padding: 2em;
-  margin-top: -15em;
-  background-color: burlywood;
-  border-radius: 10px;
 }
 
 .gallery {
@@ -554,26 +563,54 @@ body {
 }
 
 .card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
-  max-width: 720px;
-  aspect-ratio: 3 / 2;
-  background-color: #3a7260;
   border-radius: 10px;
+  width: 100%;
+  padding: 0 0.5em;
   line-height: 1.8em;
   transition: 0.2s ease-in 0s, color 0.2s ease-in 0s;
 }
 
+.card__title {
+  margin-bottom: 1em;
+}
+
+.card__figure {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 10px;
+  max-width: 720px;
+  height: fit-content;
+  aspect-ratio: 3 / 2;
+  box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
-  .card:hover > .card__img--thumb {
+  .card__figure:hover .card__img--thumb {
     transform: scale(1.1);
     opacity: 0;
     transition: 0.2s ease-in 0s;
   }
-  .card:hover > .card__img--hover {
+  .card__figure:hover .card__img--hover {
     opacity: 1;
     transition: 0.2s ease-in 0s;
   }
+}
+
+.card__view {
+  padding: 1em 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 720px;
+  overflow: visible;
 }
 
 .card__img {
@@ -592,6 +629,17 @@ body {
 .card__img--hover {
   opacity: 0;
   transition: 0.2s ease-in 0s;
+}
+
+.list__item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list__icon {
+  margin-right: 1em;
 }
 
 .contact {
@@ -693,23 +741,6 @@ body {
   .form__input--textarea {
     width: 100%;
   }
-}
-
-.form__button {
-  padding: 0.5em 1em;
-  margin-top: 1em;
-  color: rgba(72, 146, 121, 0.6);
-  border-radius: 5px;
-  border: 2px dashed burlywood;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.form__button:hover {
-  border: 2px dashed burlywood;
-  border-color: #489279;
-  transform: translate(-0.3em, -0.3em);
-  box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .form__fieldset {

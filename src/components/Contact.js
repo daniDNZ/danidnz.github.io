@@ -63,7 +63,7 @@ export default function Contact() {
                             <input type="email" name="email" id="email" className="form__input" placeholder="_email" required />
                         </fieldset>
                         <textarea name="message" id="message" cols="30" rows="5" className="form__input form__input--textarea" placeholder="_message" required></textarea>
-                        <input type="submit" className="form__button" value="send" data-content="visit"></input>
+                        <input type="submit" className="form__button button" value="send" data-content="visit"></input>
                         <div className="contact__alert alert">
                             <span className="alert__text">Mensaje enviado</span>
                         </div>
