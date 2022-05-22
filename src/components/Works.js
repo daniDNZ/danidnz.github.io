@@ -11,7 +11,7 @@ export default function Works() {
                         <div className="gallery__card card">
                             <h4 className="card__title text--monospace">App gestión veterinaria</h4>
                             <figure className="card__figure">
-                                <a href="#" alt="Web clínica veterinaria">
+                                <a href="https://danidnz.github.io/Marabu/" alt="Web clínica veterinaria" target="_blank" rel="noreferrer noopener">
                                     <img className="card__img card__img--thumb" src="/img/works1/thumbnail.webp" width="720" height="480" alt="Clínica veterinaria" />
                                     <img className="card__img card__img--hover" src="/img/works1/thumbnailHover.webp" width="720" height="480" alt="Clínica veterinaria" />
                                 </a>

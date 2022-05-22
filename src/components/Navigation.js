@@ -29,6 +29,7 @@ export default function Navigation() {
                         <button className="nav__a dropdown__btn" onClick={handleDropdown}>works_</button>
                         <div className="dropdown__content">
                             <a href="#works" className="nav__a">/all</a>
+                            <a href="https://danidnz.github.io/Marabu/" className="nav__a" target="_blank" ref="nofollow noopener noreferrer">/marabú</a>
                             {/* <Link to="/pages_example" className="nav__a">/example</Link>
                             <Link to="/" className="nav__a">/another_ex</Link> */}
                         </div>

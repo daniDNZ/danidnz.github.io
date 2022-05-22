@@ -328,37 +328,37 @@ body {
     gap: 2em;
 
     @include responsive(768px) {
-        padding: 0 4em 4em 4em;
+        padding: 0 4em;
     }
 }
 
 .card {
     @include flex(column, nowrap, center, center);
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
     width: 100%;
     padding: 0 0.5em;
     line-height: 1.8em;
-    transition: 0.2s ease-in 0s, color 0.2s ease-in 0s;
     
     &__title {
         margin-bottom: 1em;
+        align-self: flex-start;
     }
 
     &__figure {
-        display: block;
         position: relative;
         overflow: hidden;
-        white-space: nowrap;
         border-radius: 10px;
         max-width: 720px;
         height: fit-content;
         aspect-ratio: 3 / 2;
         box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
 
+        // Problema border radius con transition en webkit
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+
         &:hover {
-            
             @include responsive(768px) {
                 
                 & .card__img--thumb {
@@ -396,7 +396,6 @@ body {
             transform: scale(1);
             opacity: 1;
             transition: 0.2s ease-in 0s;
-
         }
 
         &--hover {
