@@ -1,4 +1,5 @@
 import { BsLinkedin, BsGithub } from "react-icons/bs";
+import memoji from "../img/dmoji.webp";
 
 export default function Headline() {
 
@@ -8,7 +9,7 @@ export default function Headline() {
             <section id="headline" className="headline">
                 <div className="headline__div content">
                     <div className="content__photo">
-                        <img src="/img/dmoji.webp" height="420px" width="420px" className="content__memoji" alt="Dani Memoji" />
+                        <img src={memoji} height="420px" width="420px" className="content__memoji" alt="Dani Memoji" />
                     </div>
                     <div className="content__text text">
                         <span className="content__pretitle text--monospace">Hola!👋 me llamo </span>

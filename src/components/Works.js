@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
 import { IoPaw } from "react-icons/io5";
+import marabuThumb from "../img/works1/thumbMarabu.webp";
+import marabuHover from "../img/works1/thumbnailHover.webp";
+
 
 export default function Works() {
     return (
@@ -12,8 +14,8 @@ export default function Works() {
                             <h4 className="card__title text--monospace">App gestión veterinaria</h4>
                             <figure className="card__figure">
                                 <a href="https://danidnz.github.io/Marabu/" alt="Web clínica veterinaria" target="_blank" rel="noreferrer noopener">
-                                    <img className="card__img card__img--thumb" src="/img/works1/thumbnail.webp" width="720" height="480" alt="Clínica veterinaria" />
-                                    <img className="card__img card__img--hover" src="/img/works1/thumbnailHover.webp" width="720" height="480" alt="Clínica veterinaria" />
+                                    <img className="card__img card__img--thumb" src={marabuThumb} width="720" height="480" alt="Clínica veterinaria" />
+                                    <img className="card__img card__img--hover" src={marabuHover} width="720" height="480" alt="Clínica veterinaria" />
                                 </a>
                             </figure>
                             <div className="card__view">

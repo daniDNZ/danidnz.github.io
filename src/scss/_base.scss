@@ -3,9 +3,13 @@
 */
 // Colors
 $colors: (
-    'dark'          : rgb(40, 43, 56),
-    'light'         : rgb(251, 238, 243),
-    'complementary' : rgb(225, 210, 148),
+    'dark'              : #282b38,
+    'light'             : #fefefe,
+    'primary'           : #F5D3AB,
+    'secondary'         : #B8F5E6,
+    'dark-secondary'    : #87A8A0,
+    'complementary'     : #9FAEF5,
+    'dark-complementary': #6571A8
 );
 
 // Fonts
@@ -18,9 +22,15 @@ $fonts: (
 );
 
 // Variables
-$color-primary          : map-get($colors, 'dark' );
-$color-secondary        : map-get($colors, 'light' );
-$color-complementary    : map-get($colors, 'complementary' );
+$color-dark                 : map-get($colors, 'dark' );
+$color-light                : map-get($colors, 'light' );
+$color-primary              : map-get($colors, 'primary' );
+$color-secondary            : map-get($colors, 'secondary' );
+$color-dark-secondary       : map-get($colors, 'dark-secondary' );
+$color-complementary        : map-get($colors, 'complementary' );
+$color-dark-complementary   : map-get($colors, 'dark-complementary' );
+$color-background           : map-get($colors, 'light' );
+$color-font                 : map-get($colors, 'dark' );
 
 // Fonts
 $font-primary: map-get($fonts, 'primary' );
@@ -29,16 +39,16 @@ $font-monospace: map-get($fonts, 'monospace' );
 // Dark mode
 @media (prefers-color-scheme: dark) {
     // :root {
-    $color-primary: map-get($colors, 'dark' );
-    $color-scondary: map-get($colors, 'light' );
+    $color-background: map-get($colors, 'dark' );
+    $color-font: map-get($colors, 'light' );
     // }
 }
 
 // High Contrast
 @media (prefers-contrast: high) {
-    // :root {
-    $color-primary: black;
-    $color-scondary: white;
+    // // :root {
+    // $color-primary: black;
+    // $color-secondary: white;
     // }
 }
 
@@ -130,8 +140,8 @@ q:after {
 
 // Select text
 ::selection {
-    background-color: $color-secondary;
-    color: $color-primary;
+    background-color: $color-dark;
+    color: $color-light;
 }
 
 // Typography and forms
@@ -178,8 +188,8 @@ body {
     min-height  : 100vh;
     font-size   : 1rem;
     font-family: $font-primary;
-    color: $color-secondary;
-    background-color: $color-primary;
+    color: $color-font;
+    background-color: $color-background;
     /* optional */ line-height: 1.4em;
     /* optional */ hyphens: auto;
     /* optional */ font-smooth: always;

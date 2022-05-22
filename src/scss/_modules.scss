@@ -9,16 +9,16 @@ body {
     padding: 0.5em 1em;
     margin-top: 1em;
     width: fit-content;
-    color: rgba(72, 146, 121, 0.6);
+    color: $color-dark-secondary;
     border-radius: 5px;
-    border: 2px dashed burlywood;
+    border: 2px dashed $color-primary;
     transition: transform .2s cubic-bezier(.34, 1.56, .64, 1),
         box-shadow .2s cubic-bezier(.34, 1.56, .64, 1);
 
     &:hover {
-        border-color: #489279;
+        border-color: $color-complementary;
         transform: translate(-.3em, -.3em);
-        box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
+        box-shadow: 0.4em 0.4em $color-primary;
         transition: transform .2s cubic-bezier(.34, 1.56, .64, 1),
             box-shadow .2s cubic-bezier(.34, 1.56, .64, 1);
     }
@@ -30,7 +30,7 @@ body {
     @include flex(row, nowrap, center, center);
     position: fixed;
     width: 100vw;
-    background-color: $color-primary;
+    background-color: $color-dark;
     z-index: 1000;
 
     &__a {
@@ -38,8 +38,8 @@ body {
         padding: 1em 1em;
 
         &:hover {
-            color: $color-primary;
-            background-color: $color-secondary;
+            color: $color-dark;
+            background-color: $color-light;
         }
 
         &--brand {
@@ -59,7 +59,7 @@ body {
     top: 0;
     height: 100vh;
     width: 0;
-    background-color: $color-primary;
+    background-color: $color-dark;
     transition: width 0.2s ease-in 0s;
 
     @include responsive(768px) {
@@ -109,14 +109,14 @@ body {
         background-color: transparent;
         padding: 0 1em;
         min-width: 160px;
-        border-left: 2px solid $color-complementary;
+        border-left: 2px solid $color-primary;
 
         @include responsive(768px) {
             position: absolute;
-            background-color: $color-primary;
+            background-color: $color-dark;
             padding: 0;
             border-left: 0;
-            border-right: 2px solid $color-complementary;
+            border-right: 2px solid $color-primary;
             border-radius: 0 0 3px 3px;
             text-align: end;
         }
@@ -133,6 +133,7 @@ body {
     min-height: 100vh;
     gap: 2em;
     padding: 4em;
+    background-color: $color-dark;
 
 }
 
@@ -173,8 +174,8 @@ body {
         overflow: hidden;
         white-space: nowrap;
         font-weight: 600;
-        background-color: $color-secondary;
-        color: $color-primary;
+        background-color: $color-light;
+        color: $color-dark;
         border-right: 0.15em solid transparent;
         animation: typing 2s steps(30) 1s 1 normal both, blink-3s 3s steps(1);
     }
@@ -223,37 +224,37 @@ body {
 
     @keyframes blink-3s {
         0% {
-            border-color: $color-primary;
+            border-color: $color-dark;
         }
 
         16% {
-            border-color: $color-secondary;
+            border-color: $color-light;
         }
 
         32% {
-            border-color: $color-primary;
+            border-color: $color-dark;
         }
 
         48% {
-            border-color: $color-secondary;
+            border-color: $color-light;
         }
 
         64% {
-            border-color: $color-primary;
+            border-color: $color-dark;
         }
 
         80% {
-            border-color: $color-secondary;
+            border-color: $color-light;
         }
     }
 
     @keyframes blink {
         0% {
-            border-color: $color-primary;
+            border-color: $color-dark;
         }
 
         50% {
-            border-color: $color-secondary;
+            border-color: $color-light;
         }
     }
 }
@@ -283,7 +284,7 @@ body {
         }
 
         to {
-            color: $color-secondary;
+            color: $color-light;
         }
     }
 
@@ -301,11 +302,10 @@ body {
 // ... Bio
 
 .bio {
-    background-color: $color-secondary;
-    color: $color-primary;
+    // background-color: $color-background;
+    color: $color-font;
     display: flex;
     flex-direction: column;
-    // padding-bottom: 15em;
 
     &__p {
         max-width: 40em;
@@ -317,9 +317,9 @@ body {
 // ... Works
 
 .works {
-    background-color: $color-secondary;
-    color: $color-primary;
-    border-top: 0.5em dashed burlywood;
+    // background-color: $color-background;
+    color: $color-font;
+    border-top: 0.5em dashed $color-primary;
 }
 
 .gallery {
@@ -349,7 +349,7 @@ body {
         max-width: 720px;
         height: fit-content;
         aspect-ratio: 3 / 2;
-        box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
+        box-shadow: 0.4em 0.4em $color-primary;
 
         // Problema border radius con transition en webkit
         -webkit-backface-visibility: hidden;
@@ -416,8 +416,8 @@ body {
 // ... Contact
 
 .contact {
-    background-color: $color-secondary;
-    color: $color-primary;
+    // background-color: $color-background;
+    color: $color-font;
     position: relative;
 
     &__h1 {
@@ -433,8 +433,8 @@ body {
         align-self: flex-start;
         padding: 0.2em 0.5em;
         margin-bottom: 4em;
-        background-color: $color-primary;
-        color: $color-secondary;
+        // background-color: $color-background;
+        color: $color-font;
         font-weight: 500;
     }
 
@@ -457,8 +457,8 @@ body {
 
     &--active {
         width: 10em;
-        color: #3a7260;
-        border-left: 0.2em solid #489279;
+        // color: #3a7260;
+        // border-left: 0.2em solid #489279;
         transition: 0.2s ease-in 0s;
     }
 
@@ -483,8 +483,8 @@ body {
         width: 100%;
         padding: 0.5em;
         border-radius: 10px;
-        border: 2px dashed burlywood;
-        color: $color-primary;
+        border: 2px dashed $color-primary;
+        color: $color-font;
         transition: transform .2s cubic-bezier(.34, 1.56, .64, 1),
             box-shadow .2s cubic-bezier(.34, 1.56, .64, 1);
 
@@ -492,15 +492,15 @@ body {
         &:focus,
         &[type]:focus {
             transform: translate(-.3em, -.3em);
-            border-color: #489279;
-            box-shadow: 0.4em 0.4em rgba(72, 146, 121, 0.6);
+            border-color: $color-complementary;
+            box-shadow: 0.4em 0.4em $color-primary;
             transition: transform .2s cubic-bezier(.34, 1.56, .64, 1),
                 box-shadow .2s cubic-bezier(.34, 1.56, .64, 1);
 
         }
 
         &::placeholder {
-            color: #489279;
+            color: $color-dark-secondary;
         }
 
         @include responsive(768px) {
@@ -523,8 +523,8 @@ body {
 // FOOTER
 
 .footer {
-    background-color: $color-primary;
-    border-top: 1em solid burlywood;
+    background-color: $color-dark;
+    border-top: 1em solid $color-primary;
 
     @include grid(2, 0);
     padding: 2em 1em;
@@ -534,11 +534,11 @@ body {
     &__section--thanks {
         padding: 1em;
         text-align: center;
-        border-bottom: 0.2em solid rgba(72, 146, 121, 0.6);
+        border-bottom: 0.2em solid $color-dark-secondary;
 
         @include responsive(768px) {
             text-align: end;
-            border-right: 0.2em solid rgba(72, 146, 121, 0.6);
+            border-right: 0.2em solid $color-dark-secondary;
             border-bottom: none;
         }
     }
