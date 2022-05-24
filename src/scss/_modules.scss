@@ -30,8 +30,13 @@ body {
     @include flex(row, nowrap, center, center);
     position: fixed;
     width: 100vw;
-    background-color: $color-dark;
+    background-color: $color-dark-secondary;
     z-index: 1000;
+
+    &__logo {
+        width: 100%;
+        height: 100%;
+    }
 
     &__a {
         font-size: 1.2em;
@@ -43,11 +48,21 @@ body {
         }
 
         &--brand {
+            max-width: 48px;
             margin-right: auto;
+            padding: 0;
+            margin-left: 0.5em;
 
-            @include responsive(768px) {
-                margin-right: 0;
+            // @include responsive(768px) {
+            //     display: flex;
+            //     // margin-right: 0;
+            //     justify-self: start;
+            // }
+
+            &:hover {
+                background-color: transparent;
             }
+            
         }
     }
 }
@@ -59,7 +74,7 @@ body {
     top: 0;
     height: 100vh;
     width: 0;
-    background-color: $color-dark;
+    background-color: $color-dark-secondary;
     transition: width 0.2s ease-in 0s;
 
     @include responsive(768px) {
@@ -113,7 +128,7 @@ body {
 
         @include responsive(768px) {
             position: absolute;
-            background-color: $color-dark;
+            background-color: $color-dark-secondary;
             padding: 0;
             border-left: 0;
             border-right: 2px solid $color-primary;
@@ -129,11 +144,20 @@ body {
 
 // ... Headline
 .headline {
-    @include flex(column, nowrap, center, center);
-    min-height: 100vh;
+    @include flex(column, nowrap, flex-start, center);
+    position: relative;
+    padding: 7em 0;
     gap: 2em;
-    padding: 4em;
-    background-color: $color-dark;
+    background-image: url("/src/img/bgHeadline.webp");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    background-color: $color-dark-secondary;
+    
+    @include responsive(768px) {
+        min-height: 100vh;
+
+    }
 
 }
 
@@ -141,13 +165,13 @@ body {
     @include grid(2, 0);
 
     &__photo {
-        max-width: 420px;
+        max-width: 325px;
         overflow: hidden;
         aspect-ratio: 1 / 1;
         animation: blop 0.1s steps(50) 0.2s 1 normal both;
     }
 
-    &__memoji {
+    &__pic {
         width: 100%;
         height: 100%;
         object-fit: contain;
@@ -162,7 +186,7 @@ body {
         margin: 0 auto;
 
         @include responsive(768px) {
-            align-items: flex-start;
+            align-items: flex-end;
         }
     }
 
@@ -224,7 +248,7 @@ body {
 
     @keyframes blink-3s {
         0% {
-            border-color: $color-dark;
+            border-color: $color-dark-secondary;
         }
 
         16% {
@@ -232,7 +256,7 @@ body {
         }
 
         32% {
-            border-color: $color-dark;
+            border-color: $color-dark-secondary;
         }
 
         48% {
@@ -240,7 +264,7 @@ body {
         }
 
         64% {
-            border-color: $color-dark;
+            border-color: $color-dark-secondary;
         }
 
         80% {
@@ -250,7 +274,7 @@ body {
 
     @keyframes blink {
         0% {
-            border-color: $color-dark;
+            border-color: $color-dark-secondary;
         }
 
         50% {

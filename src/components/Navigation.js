@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { Link } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { RiMenu4Line } from "react-icons/ri";
+import logo from "../img/dnzLogoClaro128.webp";
 
 export default function Navigation() {
     const [show, setShow] = useState(true);
@@ -16,7 +17,9 @@ export default function Navigation() {
     return (
         <>
             <nav className="nav">
-                <a href="#headline" className="nav__a nav__a--brand">.dnz</a>
+                <a href="#headline" className="nav__a nav__a--brand">
+                    <img src={logo}  height="128px" width="128px" className="nav__logo" alt="dnz."  />
+                </a>
                 <a href="#collapse" className="nav__a collapse-btn" alt="menu">
                     <RiMenu4Line />
                 </a>

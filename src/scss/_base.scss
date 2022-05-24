@@ -3,13 +3,12 @@
 */
 // Colors
 $colors: (
-    'dark'              : #282b38,
+    'dark'              : #323d51,
     'light'             : #fefefe,
-    'primary'           : #F5D3AB,
-    'secondary'         : #B8F5E6,
-    'dark-secondary'    : #87A8A0,
-    'complementary'     : #9FAEF5,
-    'dark-complementary': #6571A8
+    'cream'             : #efd9c9,
+    'yellow'            : #faf0d6,
+    'pink'              : #ffcccc,
+    'blue'              : #677bb4
 );
 
 // Fonts
@@ -24,11 +23,10 @@ $fonts: (
 // Variables
 $color-dark                 : map-get($colors, 'dark' );
 $color-light                : map-get($colors, 'light' );
-$color-primary              : map-get($colors, 'primary' );
-$color-secondary            : map-get($colors, 'secondary' );
-$color-dark-secondary       : map-get($colors, 'dark-secondary' );
-$color-complementary        : map-get($colors, 'complementary' );
-$color-dark-complementary   : map-get($colors, 'dark-complementary' );
+$color-primary              : map-get($colors, 'cream' );
+$color-secondary            : map-get($colors, 'yellow' );
+$color-dark-secondary       : map-get($colors, 'blue' );
+$color-complementary        : map-get($colors, 'pink' );
 $color-background           : map-get($colors, 'light' );
 $color-font                 : map-get($colors, 'dark' );
 
