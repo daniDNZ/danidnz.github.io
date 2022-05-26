@@ -1,5 +1,7 @@
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import dPic from "../img/dPic.webp";
+import { ReactComponent as Line } from "../img/svg/line.svg";
+import { ReactComponent as Box } from "../img/svg/box.svg";
 import { ReactComponent as YellowWave } from "../img/svg/yellowWave.svg";
 
 export default function Headline() {
@@ -7,32 +9,32 @@ export default function Headline() {
 
     return (
         <>
-            <section id="headline" className="headline">
-                <div className="headline__div content">
-                    
-                    <div className="content__text text">
-                        <span className="content__pretitle text--monospace">Hola!👋 me llamo </span>
-                        <h1 className="content__h1">Dani Sanz</h1>
-                        <span className="content__subtitle"> y soy desarrollador web junior.</span>
-                    </div>
-                    <div className="content__photo">
-                        <img src={dPic} width="420px" className="content__pic" alt="Dani Sanz" />
-                    </div>
+            <div className="section section--headline" id="headline">
+                <div className="squares">
+                    <div className="squares__div squares__div--2"></div>
+                    <div className="squares__div squares__div--3"></div>
+                    <div className="squares__div squares__div--4"></div>
                 </div>
-                <div className="headline__div social">
-                    <div className="social__div">
-                        <a href="https://www.linkedin.com/in/danielsanzelguer/" className="social__a" alt="LinkedIn">
-                            <BsLinkedin className="social__logo" />
-                        </a>
-                        <a href="https://github.com/daniDNZ" className="social__a" alt="GitHub">
-                            <BsGithub className="social__logo" />
-                        </a>
-                    </div>
-                </div>
-                {/* <YellowWave /> */}
-            </section>
+                <section className="headline__section">
+                    <div className="squares__div squares__div--1"></div>
 
-            
+                    <h2 className="headline__h2">Dani Sanz</h2>
+                    <h3 className="headline__h3">Frontend<br/>Developer</h3>
+
+                    <ul className="h-menu">
+                        <li className="h-menu__li"><a href="#works" className="h-menu__a" title="works">works</a></li>
+                        <li className="h-menu__li"><a href="#bio" className="h-menu__a" title="bio">about</a></li>
+                        <li className="h-menu__li"><a href="#contact" className="h-menu__a" title="contact">contact</a></li>
+                    </ul>
+
+                    <Box />
+
+                    <ul className="headline__ul">
+                        <li className="headline__li"><a href="#" className="headline__a" title="LinkedIn">LinkedIn</a></li>
+                        <li className="headline__li"><a href="#" className="headline__a" title="GitHub">GitHub</a></li>
+                    </ul>
+                </section>
+            </div>
         </>
     )
 }

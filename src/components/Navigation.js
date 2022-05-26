@@ -5,40 +5,18 @@ import { RiMenu4Line } from "react-icons/ri";
 import logo from "../img/dnzLogoClaro128.webp";
 
 export default function Navigation() {
-    const [show, setShow] = useState(true);
-    const handleDropdown = () => {
-        const dropContent = document.querySelector('.dropdown__content');
-        show
-        ? dropContent.classList.add('show')
-        : dropContent.classList.remove('show');
-        setShow(!show);
-    }
 
     return (
         <>
+            <h1 className="h1">
+                <a href="#headline" title="Dani Sanz" className="h1__a">.dnz</a>
+            </h1>
             <nav className="nav">
-                <a href="#headline" className="nav__a nav__a--brand">
-                    <img src={logo}  height="128px" width="128px" className="nav__logo" alt="dnz."  />
-                </a>
-                <a href="#collapse" className="nav__a collapse-btn" alt="menu">
-                    <RiMenu4Line />
-                </a>
-                <div id="collapse" className="collapse">
-                    <div className="collapse__header">
-                        <a href="#" className="nav__a collapse__close-btn" alt="Close menu"><MdClose /></a>
-                    </div>
-                    <a href="#bio" className="nav__a">bio_</a>
-                    <div className="dropdown">
-                        <button className="nav__a dropdown__btn" onClick={handleDropdown}>works_</button>
-                        <div className="dropdown__content">
-                            <a href="#works" className="nav__a">/all</a>
-                            <a href="https://danidnz.github.io/Marabu/" className="nav__a" target="_blank" rel="nofollow noopener noreferrer">/marabú</a>
-                            {/* <Link to="/pages_example" className="nav__a">/example</Link>
-                            <Link to="/" className="nav__a">/another_ex</Link> */}
-                        </div>
-                    </div>
-                    <a href="#contact" className="nav__a">contact_</a>
-                </div>
+                <ul className="nav__ul">
+                    <li className="nav__li"><a href="#works" className="nav__a" title="works">works</a></li>
+                    <li className="nav__li"><a href="#bio" className="nav__a" title="bio">about</a></li>
+                    <li className="nav__li"><a href="#contact" className="nav__a" title="contact">contact</a></li>
+                </ul>
             </nav>
         </>
     )

@@ -1,53 +1,62 @@
 /*
     RESET
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+
 // Colors
 $colors: (
-    'dark'              : #323d51,
-    'light'             : #fefefe,
-    'cream'             : #efd9c9,
-    'yellow'            : #faf0d6,
-    'pink'              : #ffcccc,
-    'blue'              : #677bb4
+    '1' : #FFEACE,
+    '2' : #E6D3BA,
+    '3' : #BFB09B,
+    '4' : #807567,
+    '5' : #403B34,
+    'light' : #FFF5E8,
+    'dark' : black
 );
 
 // Fonts
 $fonts: (
     // 'primary'   : (Verdana, Geneva, Tahoma, sans-serif),
-    'primary'   : (-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                    sans-serif),
-    'monospace' : ('Courier New', Courier, monospace),
+    'titular' : ('Montserrat', sans-serif),
+    'primary' : ('Lora', serif),
+    'ultra'   : ('Teko', sans-serif)
 );
 
 // Variables
-$color-dark                 : map-get($colors, 'dark' );
-$color-light                : map-get($colors, 'light' );
-$color-primary              : map-get($colors, 'cream' );
-$color-secondary            : map-get($colors, 'yellow' );
-$color-dark-secondary       : map-get($colors, 'blue' );
-$color-complementary        : map-get($colors, 'pink' );
-$color-background           : map-get($colors, 'light' );
-$color-font                 : map-get($colors, 'dark' );
+$color-1        : map-get($colors, '1');
+$color-2        : map-get($colors, '2');
+$color-3        : map-get($colors, '3');
+$color-4        : map-get($colors, '4');
+$color-5        : map-get($colors, '5');
+$color-light    : map-get($colors, 'light');
+$color-dark     : map-get($colors, 'dark');
+
 
 // Fonts
-$font-primary: map-get($fonts, 'primary' );
-$font-monospace: map-get($fonts, 'monospace' );
+$font-primary: map-get($fonts, 'primary');
+$font-titular: map-get($fonts, 'titular');
+$font-ultra: map-get($fonts, 'ultra');
+
+$color-font: $color-4;
+$color-background: $color-5;
 
 // Dark mode
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     // :root {
-    $color-background: map-get($colors, 'dark' );
-    $color-font: map-get($colors, 'light' );
+    $color-background: $color-1;
+    $color-font: $color-5;
     // }
 }
 
 // High Contrast
 @media (prefers-contrast: high) {
-    // // :root {
-    // $color-primary: black;
-    // $color-secondary: white;
-    // }
+    :root {
+    $color-font: black;
+    $color-background: white;
+    }
 }
 
 // Reduce Motions
@@ -183,14 +192,22 @@ svg {
 
 // General Typo
 body {
-    min-height  : 100vh;
-    font-size   : 1rem;
+    min-height: 100vh;
+    font-size: 1rem;
     font-family: $font-primary;
     color: $color-font;
     background-color: $color-background;
-    /* optional */ line-height: 1.4em;
-    /* optional */ hyphens: auto;
-    /* optional */ font-smooth: always;
-    /* optional */ -webkit-font-smoothing: antialiased;
-    /* optional */ -moz-osx-font-smoothing: grayscale;
+    /* optional */
+    // line-height: 1.4em;
+    /* optional */
+    hyphens: auto;
+    /* optional */
+    font-smooth: always;
+    /* optional */
+    -webkit-font-smoothing: antialiased;
+    /* optional */
+    -moz-osx-font-smoothing: grayscale;
 }
+
+
+

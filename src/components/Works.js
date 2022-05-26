@@ -6,27 +6,18 @@ import marabuHover from "../img/works1/thumbnailHover.webp";
 export default function Works() {
     return (
         <>
-            <section id="works" className="section works">
-                <div className="section__container">
-                    <h1 className="section__h1 text--monospace">Works/</h1>
-                    <div className="works__gallery gallery">
-                        <div className="gallery__card card">
-                            <h4 className="card__title text--monospace">App gestión veterinaria</h4>
-                            <figure className="card__figure">
-                                <a href="https://danidnz.github.io/Marabu/" alt="Web clínica veterinaria" target="_blank" rel="noreferrer noopener">
-                                    <img className="card__img card__img--thumb" src={marabuThumb} width="720" height="480" alt="Clínica veterinaria" />
-                                    <img className="card__img card__img--hover" src={marabuHover} width="720" height="480" alt="Clínica veterinaria" />
-                                </a>
-                            </figure>
-                            <div className="card__view">
-                                <ul className="card__list list">
-                                    <li className="list__item"><IoPaw className="list__icon" /> Front page + app de gestión</li>
-                                    <li className="list__item"><IoPaw className="list__icon" /> React + Bootstrap</li>
-                                    <li className="list__item"><IoPaw className="list__icon" /> Symfony + MySQL</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <section id="works" className="section">
+                <h2 className="works__h2">Works</h2>
+                <p className="works__p">Últimos trabajos</p>
+                <div className="grid">
+                    <article className="article">
+                        <img src="#" alt="Imagen" className="article__img" loading="lazy" />
+                        <h4 className="works__h4">Nombre trabajo</h4>
+                    </article>
+                    <article className="article">
+                        <img src="#" alt="Imagen" className="article__img" loading="lazy" />
+                        <h4 className="works__h4">Nombre trabajo</h4>
+                    </article>
                 </div>
             </section>
         </>
