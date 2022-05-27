@@ -1,8 +1,3 @@
-import { useState } from "react";
-// import { Link } from "react-router-dom";
-import { MdClose } from "react-icons/md";
-import { RiMenu4Line } from "react-icons/ri";
-import logo from "../img/dnzLogoClaro128.webp";
 
 export default function Navigation() {
 

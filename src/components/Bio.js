@@ -1,9 +1,14 @@
+import dani from "../img/dPic.webp";
+import { GrLinkedin } from 'react-icons/gr';
+import { GrGithub } from 'react-icons/gr';
+
 export default function Bio() {
     return (
         <>
             <section id="bio" className="section bio">
-                <h2 className="bio__h2">Bio</h2>
+                <h2 className="h2 bio__h2">About</h2>
                 <p className="bio__p">
+                    <img src={dani} className="bio__pic" alt="Dani Sanz" />
                     Me encanta esto. Me refiero al <b>desarrollo web</b>, claro. A lo largo de mi vida he tonteado varias veces con la programación
                     y la maquetación web pero nunca demasiado en serio. Sin embargo, hace apenas un año tomé la decisión de cambiar de rumbo
                     e invertir en un <b>bootcamp</b> de esos tan famosos de desarrollo web fullstack. Más de 500 horas de clases y curro que
@@ -20,13 +25,13 @@ export default function Bio() {
 
                 <ul className="social">
                     <li className="social__li">
-                        <a href="#" className="social__a" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                            <svg className="social__svg"></svg>
+                        <a href="https://www.linkedin.com/in/danielsanzelguer/" className="social__a" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <div className="social__logo"><GrLinkedin size={40}/></div>
                         </a>
                     </li>
                     <li className="social__li">
-                        <a href="#" className="social__a" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                            <svg className="social__svg"></svg>
+                        <a href="https://github.com/daniDNZ" className="social__a" title="GitHub" target="_blank" rel="noopener noreferrer">
+                            <div className="social__logo"><GrGithub size={40}/></div>
                         </a>
                     </li>
                 </ul>

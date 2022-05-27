@@ -4,7 +4,6 @@ export default function Contact() {
         const alert = document.querySelector('.alert');
         alert.classList.remove('alert--active');
         alert.classList.remove('alert--fail');
-        alert.classList.remove('alert--success');
     }
 
     const showAlert = () => {
@@ -19,7 +18,6 @@ export default function Contact() {
 
         if (d.sent) {
 
-            alert.classList.add('alert--success');
             alertText.textContent = 'Mensaje enviado';
             form.reset();
             showAlert();
@@ -53,18 +51,17 @@ export default function Contact() {
 
     return (
         <>
-            <section id="contact" className="section">
-                <h2 className="h2">Contact</h2>
-                <p className="p">¿Hablamos?</p>
+            <section id="contact" className="section section--contact">
+                <h2 className="h2 h2__contact">Contact</h2>
                 <form method="post" className="form" onSubmit={handleForm} >
                     <fieldset className="form__fieldset">
                         <input type="text" name="name" id="name" placeholder="_name" className="form__input" required />
                         <input type="email" name="email" id="email" className="form__input" placeholder="_email" required />
                     </fieldset>
                     <textarea name="message" id="message" cols="30" rows="5" className="form__input form__input--textarea" placeholder="_message" required></textarea>
-                    <input type="submit" className="form__button button" value="send" data-content="visit"></input>
+                    <input type="submit" className="form__button button" value="Send" data-content="visit"></input>
                     <div className="alert">
-                        <span className="alert__text">Mensaje enviado</span>
+                        <span className="alert__text">Algo ha ido mal...</span>
                     </div>
                 </form>
             </section>

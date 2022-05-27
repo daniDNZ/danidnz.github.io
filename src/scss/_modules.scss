@@ -1,6 +1,39 @@
 // FORM
-.button {}
+.button {
+    color: $color-4;
+    
+    cursor: pointer;
+
+    padding: 0.5em;
+
+    &:hover {
+        color: $color-6;
+    }
+}
 
 .alert {
-    &__text {}
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;    
+    
+    padding: 0.5em;
+    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    transition: .2s ease-in 0s;
+
+    &--active {
+        display: block;
+        width: 9em;
+        color: inherit;
+
+        transition: .2s ease-in 0s;
+    }
+
+    &--fail {
+        color: rgb(164, 93, 93);
+    }
 }
