@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.34464f53.css",
-    "main.js": "/static/js/main.715da1fc.js",
+    "main.css": "/static/css/main.8329a35e.css",
+    "main.js": "/static/js/main.c19fd036.js",
     "static/js/787.905a6b4b.chunk.js": "/static/js/787.905a6b4b.chunk.js",
-    "static/media/thumbMarabu.webp": "/static/media/thumbMarabu.67693fbd64663d0001e0.webp",
-    "static/media/dPic.webp": "/static/media/dPic.e910bb027123af872764.webp",
-    "static/media/thumbnailHover.webp": "/static/media/thumbnailHover.7295f801d8837e15c99e.webp",
+    "static/media/w2-thumb.webp": "/static/media/w2-thumb.c054b1a2a8ec04d10b5a.webp",
+    "static/media/marabup.webp": "/static/media/marabup.2f32015c5c36dea10aa2.webp",
+    "static/media/dPic.webp": "/static/media/dPic.e9d2cf38c70659852e79.webp",
     "static/media/box.svg": "/static/media/box.492020a1dfd0946833ecf02cd580de79.svg",
-    "static/media/dnzLogoClaro128.webp": "/static/media/dnzLogoClaro128.83e707482540d0dc6b77.webp",
     "index.html": "/index.html",
-    "main.34464f53.css.map": "/static/css/main.34464f53.css.map",
-    "main.715da1fc.js.map": "/static/js/main.715da1fc.js.map",
+    "main.8329a35e.css.map": "/static/css/main.8329a35e.css.map",
+    "main.c19fd036.js.map": "/static/js/main.c19fd036.js.map",
     "787.905a6b4b.chunk.js.map": "/static/js/787.905a6b4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34464f53.css",
-    "static/js/main.715da1fc.js"
+    "static/css/main.8329a35e.css",
+    "static/js/main.c19fd036.js"
   ]
 }
