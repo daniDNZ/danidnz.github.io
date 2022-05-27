@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.ae9c790d.css",
-    "main.js": "/static/js/main.8bc64a61.js",
+    "main.css": "/static/css/main.30c39734.css",
+    "main.js": "/static/js/main.e512ab68.js",
     "static/js/787.905a6b4b.chunk.js": "/static/js/787.905a6b4b.chunk.js",
     "static/media/thumbMarabu.webp": "/static/media/thumbMarabu.67693fbd64663d0001e0.webp",
     "static/media/dPic.webp": "/static/media/dPic.e910bb027123af872764.webp",
     "static/media/thumbnailHover.webp": "/static/media/thumbnailHover.7295f801d8837e15c99e.webp",
-    "static/media/box.svg": "/static/media/box.6d922e5e1c44426f2594bebdbe3b4b7c.svg",
+    "static/media/box.svg": "/static/media/box.492020a1dfd0946833ecf02cd580de79.svg",
     "static/media/dnzLogoClaro128.webp": "/static/media/dnzLogoClaro128.83e707482540d0dc6b77.webp",
     "static/media/yellowWave.svg": "/static/media/yellowWave.a74d3c30599d673bc3e5eab0a87fd54d.svg",
     "index.html": "/index.html",
     "static/media/line.svg": "/static/media/line.33f4fee9c0ba4b38705c48d17b213f97.svg",
-    "main.ae9c790d.css.map": "/static/css/main.ae9c790d.css.map",
-    "main.8bc64a61.js.map": "/static/js/main.8bc64a61.js.map",
+    "main.30c39734.css.map": "/static/css/main.30c39734.css.map",
+    "main.e512ab68.js.map": "/static/js/main.e512ab68.js.map",
     "787.905a6b4b.chunk.js.map": "/static/js/787.905a6b4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae9c790d.css",
-    "static/js/main.8bc64a61.js"
+    "static/css/main.30c39734.css",
+    "static/js/main.e512ab68.js"
   ]
 }
