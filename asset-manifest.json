@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.bafe8499.css",
-    "main.js": "/static/js/main.38907478.js",
+    "main.css": "/static/css/main.34464f53.css",
+    "main.js": "/static/js/main.715da1fc.js",
     "static/js/787.905a6b4b.chunk.js": "/static/js/787.905a6b4b.chunk.js",
     "static/media/thumbMarabu.webp": "/static/media/thumbMarabu.67693fbd64663d0001e0.webp",
+    "static/media/dPic.webp": "/static/media/dPic.e910bb027123af872764.webp",
     "static/media/thumbnailHover.webp": "/static/media/thumbnailHover.7295f801d8837e15c99e.webp",
     "static/media/box.svg": "/static/media/box.492020a1dfd0946833ecf02cd580de79.svg",
     "static/media/dnzLogoClaro128.webp": "/static/media/dnzLogoClaro128.83e707482540d0dc6b77.webp",
     "index.html": "/index.html",
-    "main.bafe8499.css.map": "/static/css/main.bafe8499.css.map",
-    "main.38907478.js.map": "/static/js/main.38907478.js.map",
+    "main.34464f53.css.map": "/static/css/main.34464f53.css.map",
+    "main.715da1fc.js.map": "/static/js/main.715da1fc.js.map",
     "787.905a6b4b.chunk.js.map": "/static/js/787.905a6b4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bafe8499.css",
-    "static/js/main.38907478.js"
+    "static/css/main.34464f53.css",
+    "static/js/main.715da1fc.js"
   ]
 }
