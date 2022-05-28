@@ -177,7 +177,7 @@ i {
 
 @media (prefers-color-scheme: dark) {
   .img {
-    mix-blend-mode: hard-light;
+    mix-blend-mode: normal;
     opacity: 80%;
   }
 }

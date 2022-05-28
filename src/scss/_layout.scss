@@ -69,7 +69,7 @@ i {
     opacity: 90%;
     
     @include darkMode() {
-        mix-blend-mode:hard-light;
+        mix-blend-mode:normal;
         opacity: 80%;
     }
 }
