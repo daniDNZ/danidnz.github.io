@@ -8,19 +8,16 @@ export default function Bio() {
             <section id="bio" className="section bio">
                 <h2 className="h2 bio__h2">About</h2>
                 <p className="bio__p">
-                    <img src={dani} className="bio__pic" alt="Dani Sanz" />
-                    Me encanta esto. Me refiero al <b>desarrollo web</b>, claro. A lo largo de mi vida he tonteado varias veces con la programación
-                    y la maquetación web pero nunca demasiado en serio. Sin embargo, hace apenas un año tomé la decisión de cambiar de rumbo
-                    e invertir en un <b>bootcamp</b> de esos tan famosos de desarrollo web fullstack. Más de 500 horas de clases y curro que
-                    terminaron haciendo <i>click</i> en mi cerebro, mostrándome lo que esta profesión tenía para mí. Ahora me encuentro
-                    trabajando todos los días a tiempo completo para seguir aprendiendo y mejorar todo lo rápido que puedo.
-                </p>
-                <p className="bio__p">
-                    Por ahora, donde me siento más fuerte es en <b>front end</b>. Estoy todos los días haciendo proyectos en <b>React</b> con
-                    <b> html, css, sass, y javascript</b>. Aún así, también he utilizado <b>Symphony, php y mySQL</b> y me encantaría aprender
-                    más de <i>back</i>, está en mis tareas pendientes. Con esto quiero decir que estoy preparado para enfrentarme a lo que
-                    me pongan delante y deseando aportar. Más adelante tienes mis últimos trabajos y un formulario para contactar conmigo ¡Un
-                    saludo y gracias!
+                    <img src={dani} className="img bio__pic" alt="Dani Sanz" loading="lazy"/>
+                    Hola! Me llamo Dani Sanz y soy <b>desarrollador web frontend.</b> Últimamente dedico casi todo mi tiempo a esto pero también
+                    tengo otros hobbies como la fotografía, el senderismo, los videojuegos o la música.
+                    <br />
+                    <br/>
+                    Estoy todos los días haciendo proyectos en <b>ReactJS</b> con
+                    <b> HTML, CSS, SCSS, y JavaScript</b>. Aún así, también he utilizado <b>Symphony, PHP y MySQL.</b> Me encantaría aprender
+                    más <i>back</i>, está en mis tareas pendientes. Con esto quiero decir que estoy preparado para enfrentarme a lo que
+                    me pongan delante y deseando aportar. No te olvides de visitar mis <a className="a" href="#works"><b><i>últimos trabajos </i></b></a>
+                     y de mandarme un mensaje con el formulario que tienes más abajo ¡Un saludo y que tengas un buen día!
                 </p>
 
                 <ul className="social">

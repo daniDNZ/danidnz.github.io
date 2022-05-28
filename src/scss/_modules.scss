@@ -1,13 +1,17 @@
 // FORM
 .button {
-    color: $color-4;
+    color: $color-primary;
     
     cursor: pointer;
 
     padding: 0.5em;
 
+    @include darkMode() {
+        color: $color-primary-dark;
+    }
+
     &:hover {
-        color: $color-6;
+        color: $color-high;
     }
 }
 

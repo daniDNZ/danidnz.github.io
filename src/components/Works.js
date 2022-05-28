@@ -7,6 +7,12 @@ import { RiExternalLinkLine } from 'react-icons/ri';
 export default function Works() {
 
     useEffect(() => {
+
+        /**
+        * Solution by Alvaro Trigo 
+        * Thank you!
+        * https://alvarotrigo.com/
+        */
         init();
 
         function init() {
@@ -15,7 +21,6 @@ export default function Works() {
         }
 
         function bindEvents() {
-            console.log("wee");
             trackScroll();
         }
 
@@ -74,7 +79,7 @@ export default function Works() {
             <div className="sticky-container">
                 <div className="sticky-container__div">
                     <article className="article">
-                        <img src={marabu} alt="Imagen" className="article__img" loading="lazy" />
+                        <img src={marabu} alt="Imagen" className="img article__img" loading="lazy" />
                         <h4 className="article__h4">MARABÚ</h4>
                         <ul className="article__ul">
                             <li className="article__li">REACT</li>
@@ -88,7 +93,7 @@ export default function Works() {
                         </ul>
                     </article>
                     <article className="article">
-                        <img src={w2} alt="Imagen" className="article__img" loading="lazy" />
+                        <img src={w2} alt="Imagen" className="img article__img" loading="lazy" />
                         <h4 className="article__h4">PORTFOLIO</h4>
                         <ul className="article__ul">
                             <li className="article__li">REACT</li>

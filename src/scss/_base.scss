@@ -15,44 +15,53 @@ $colors: (
     '5' : #403B34,
     '6' : #66727b,
     '7' : #343B40,
-    'light' : #FFF5E8,
+    '8' : #B8BBBF,
+    '9' : #3E4C59,
+    '10' : #BF4B60,
+    '11' : #594045,
+    'light' : #ffffff,
     'dark' : black
 );
 
 // Fonts
 $fonts: (
-    // 'primary'   : (Verdana, Geneva, Tahoma, sans-serif),
-    'titular' : ('Montserrat', sans-serif),
-    'primary' : ('Lora', serif),
-    'ultra'   : ('Teko', sans-serif)
+    'primary' : ('Montserrat', sans-serif)
 );
 
 // Variables
-$color-1        : map-get($colors, '1');
-$color-2        : map-get($colors, '2');
-$color-3        : map-get($colors, '3');
-$color-4        : map-get($colors, '4');
-$color-5        : map-get($colors, '5');
-$color-6        : map-get($colors, '6');
-$color-7        : map-get($colors, '7');
-$color-light    : map-get($colors, 'light');
-$color-dark     : map-get($colors, 'dark');
+$color-light            : map-get($colors, 'light');
+$color-dark             : map-get($colors, 'dark');
+$color-primary          : map-get($colors, '9');
+$color-secondary        : map-get($colors, '8');
+$color-high             : map-get($colors, '10');
+$color-primary-dark     : map-get($colors, '8');
+$color-secondary-dark   : map-get($colors, '9');
+$color-high-dark        : map-get($colors, '11');
+// // Variables
+// $color-light            : map-get($colors, 'light');
+// $color-dark             : map-get($colors, 'dark');
+// $color-primary          : map-get($colors, '3');
+// $color-secondary        : map-get($colors, '7');
+// $color-high             : map-get($colors, '6');
+// $color-primary-dark     : map-get($colors, '4');
+// $color-secondary-dark   : map-get($colors, '7');
+// $color-high-dark        : map-get($colors, '6');
 
 
 // Fonts
 $font-primary: map-get($fonts, 'primary');
-$font-titular: map-get($fonts, 'titular');
-$font-ultra: map-get($fonts, 'ultra');
 
-$color-font: $color-4;
-$color-background: $color-5;
 
 // Dark mode
-@media (prefers-color-scheme: light) {
-    // :root {
-    $color-background: $color-1;
-    $color-font: $color-5;
-    // }
+
+$darkMode: true; // Enable dark mode detection
+
+@mixin darkMode {
+    @if($darkMode) {
+        @media (prefers-color-scheme: dark) {
+            @content;
+        }
+    }
 }
 
 // High Contrast
@@ -199,8 +208,8 @@ body {
     min-height: 100vh;
     font-size: 1rem;
     font-family: $font-primary;
-    color: $color-font;
-    background-color: $color-background;
+    color: $color-primary;
+    background-color: $color-secondary;
     /* optional */
     // line-height: 1.4em;
     /* optional */
@@ -211,6 +220,11 @@ body {
     -webkit-font-smoothing: antialiased;
     /* optional */
     -moz-osx-font-smoothing: grayscale;
+
+    @include darkMode(){
+        color: $color-primary-dark;
+        background-color: $color-secondary-dark;
+    }
 }
 
 

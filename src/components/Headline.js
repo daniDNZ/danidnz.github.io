@@ -1,4 +1,6 @@
 import { ReactComponent as Box } from "../img/svg/box.svg";
+// import logo from "../img/svg/logo.svg";
+import { ReactComponent as Logo } from "../img/svg/logo.svg";
 
 export default function Headline() {
 
@@ -7,9 +9,14 @@ export default function Headline() {
         <>
             <div className="section section--headline" id="headline">
                 <section className="headline__section">
-                    <div className="square"></div>
+                    <div className="square">
+                    </div>
+                    <figure className="logo">
+                        <Logo />
+                    </figure>
+                    {/* <img className="logo" src={logo} alt="logo" /> */}
 
-                    <h2 className="headline__h2">Dani Sanz</h2>
+                    {/* <h2 className="headline__h2">Dani Sanz</h2> */}
                     <h3 className="headline__h3">Frontend<br/>Developer</h3>
 
                     <ul className="h-menu">
