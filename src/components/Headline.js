@@ -11,7 +11,7 @@ export default function Headline() {
                 <section className="headline__section">
                     <div className="square">
                     </div>
-                    <figure className="logo">
+                    <figure className="figure">
                         <Logo />
                     </figure>
                     {/* <img className="logo" src={logo} alt="logo" /> */}

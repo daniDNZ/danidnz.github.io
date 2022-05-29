@@ -38,7 +38,10 @@
 body {
     
     @include responsive(768px) {
+        max-width: 1920px;
         font-size: 1.1rem;
+
+        margin: 0 auto;
     }
 }
 
@@ -168,6 +171,13 @@ i {
 
 }
 
+.figure {
+    position: relative;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+
+}
+
 .headline {
     &__section {
         min-height: 100vh;
@@ -228,7 +238,7 @@ i {
         @include responsive(600px) {
             font-size: 9vw;
 
-            margin: 3vw;
+            margin: 3vw 1vw;
 
             grid-row: 3 / 4;
             align-self: center;
@@ -309,7 +319,7 @@ i {
 
 .works {
     &__h2 {
-        margin: 4vw 0 0 4vw;
+        margin: 4vw ;
 
         align-self: center;
     }
@@ -320,18 +330,18 @@ i {
     }
 }
 
-.sticky-container__div {
-    overflow-x: hidden;
-    overflow-y: hidden;
-    display: flex;
-    flex-flow: row;
-    position: sticky;
-    top: 0;
-}
+// .sticky-container__div {
+//     overflow-x: hidden;
+//     overflow-y: hidden;
+//     display: flex;
+//     flex-flow: row;
+//     position: sticky;
+//     top: 0;
+// }
 
 .article {
-    min-width: 95vw;
-    height: 80vh;
+    // min-width: 80vw;
+    // min-height: 80vh;
     background-color: $color-secondary;
 
     
@@ -340,8 +350,8 @@ i {
     grid-template-rows: 1fr 1fr;
     
     @include responsive() {
-        min-height: 100vh;
-        padding: 5vw;
+        // min-height: 100vh;
+        // padding: 5vw;
     }
 
     @include darkMode() {
@@ -394,7 +404,7 @@ i {
         max-height: 50vh;
     }
 
-    &:nth-child(odd) {
+    // &:nth-child(odd) {
         .article__h4 {
        
             grid-row: 1 / 2;
@@ -421,32 +431,32 @@ i {
             justify-self: end;
             align-self: end;
         }
-    }
+    // }
 
     &:nth-child(even) {
         .article__h4 {
     
             grid-row: 1 / 2;
-            grid-column: 1 / 2;
+            grid-column: 2 / 3;
             justify-self: end;
         }
-        .article__ul {
-            text-align: end;
+    //     .article__ul {
+    //         text-align: end;
     
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            justify-self: end;
-            align-self:  center;
-        }
+    //         grid-column: 2 / 3;
+    //         grid-row: 1 / 2;
+    //         justify-self: end;
+    //         align-self:  center;
+    //     }
     
-        .article__ul-social{
-            grid-row: 2 / 3;
-            grid-column: 2 / 3;
-        }
+    //     .article__ul-social{
+    //         grid-row: 2 / 3;
+    //         grid-column: 2 / 3;
+    //     }
 
         .article__img {
+            grid-row: 1 / 2;
             grid-column: 1 / 2;
-            grid-row: 2 / 3;
             
         }
     }

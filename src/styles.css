@@ -144,7 +144,9 @@ body {
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
   body {
+    max-width: 1920px;
     font-size: 1.1rem;
+    margin: 0 auto;
   }
 }
 
@@ -250,6 +252,12 @@ i {
   }
 }
 
+.figure {
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
 .headline__section {
   min-height: 100vh;
   width: 100%;
@@ -282,7 +290,7 @@ i {
 @media screen and (min-width: 600px) and (orientation: landscape) {
   .headline__h3 {
     font-size: 9vw;
-    margin: 3vw;
+    margin: 3vw 1vw;
     grid-row: 3 / 4;
     align-self: center;
   }
@@ -361,7 +369,7 @@ i {
 }
 
 .works__h2 {
-  margin: 4vw 0 0 4vw;
+  margin: 4vw;
   align-self: center;
 }
 
@@ -369,29 +377,11 @@ i {
   align-self: flex-start;
 }
 
-.sticky-container__div {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  display: flex;
-  flex-flow: row;
-  position: sticky;
-  top: 0;
-}
-
 .article {
-  min-width: 95vw;
-  height: 80vh;
   background-color: #B8BBBF;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-}
-
-@media screen and (min-width: 960px) and (orientation: landscape) {
-  .article {
-    min-height: 100vh;
-    padding: 5vw;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -452,13 +442,13 @@ i {
   max-height: 50vh;
 }
 
-.article:nth-child(odd) .article__h4 {
+.article .article__h4 {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   justify-self: start;
 }
 
-.article:nth-child(odd) .article__ul {
+.article .article__ul {
   text-align: start;
   grid-row: 2 / 3;
   grid-column: 1 / 2;
@@ -466,12 +456,12 @@ i {
   align-self: center;
 }
 
-.article:nth-child(odd) .article__ul-social {
+.article .article__ul-social {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
 }
 
-.article:nth-child(odd) .article__img {
+.article .article__img {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   justify-self: end;
@@ -480,26 +470,13 @@ i {
 
 .article:nth-child(even) .article__h4 {
   grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  justify-self: end;
-}
-
-.article:nth-child(even) .article__ul {
-  text-align: end;
   grid-column: 2 / 3;
-  grid-row: 1 / 2;
   justify-self: end;
-  align-self: center;
-}
-
-.article:nth-child(even) .article__ul-social {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
 }
 
 .article:nth-child(even) .article__img {
+  grid-row: 1 / 2;
   grid-column: 1 / 2;
-  grid-row: 2 / 3;
 }
 
 .bio__pic {
