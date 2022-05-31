@@ -22,7 +22,6 @@
 }
 
 #root {
-    
     @include flex(column, nowrap, flex-start, center);
 
 }
@@ -35,15 +34,31 @@
 }
 
 .h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    @include responsive() {
+        font-size: 3em;
+    }
 }
 
 .h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    @include responsive() {
+        font-size: 2.5em;
+    }
 }
 
 .h3 {
+    font-size: 1.6rem;
+}
+
+.h4 {
     font-size: 1.4rem;
+
+    @include responsive() {
+        font-size: 1.8em;
+    }
 }
 
 b {
@@ -64,15 +79,26 @@ i {
 
     &:hover {
         color: $color-high;
+        @include darkMode() {
+            color: $color-secondary;
+        }
+        
+    }
+    
+    &:hover .react-icons {
+        fill: $color-high;
+        @include darkMode() {
+            fill: $color-secondary;
+        }
+
     }
 }
 
 .img {
-    mix-blend-mode:darken;
     opacity: 90%;
-    
+    z-index: 0;
+
     @include darkMode() {
-        mix-blend-mode:normal;
         opacity: 80%;
     }
 }
@@ -82,51 +108,46 @@ i {
     align-self: center;
     fill: $color-primary;
 
-    z-index: -1;
-}
-
-// HEADER
-
-.header {
-    width: 100%;
-    background-color: $color-primary;
-
-    position:sticky;
-    position:-webkit-sticky;
-    top: 0;
-
-    @include darkMode() {
-        border-color: $color-primary-dark;
-    }
-
 }
 
 // HEADLINE
 
 .headline {
+
     height: 100vh;
+    width: 100%;
     background-color: $color-primary;
     overflow: hidden;
     opacity: 0;
 
-    justify-content: flex-start;
+    padding: 1em;
+
+    @include flex(column, nowrap, center, center);
     position: relative;
 
     animation: appear 1s ease-in-out 0s forwards;
 
+    @include darkMode {
+        background-color: $color-primary-dark;
+    }
+
     &:before,
     &:after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            min-width: 300vw;
-            min-height: 300vw;
-            background-color: $color-secondary;
-            animation-name: rotate;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
+        content: "";
+        position: absolute;
+        left: 50%;
+        min-width: 300vw;
+        min-height: 300vw;
+        background-color: $color-secondary;
+        animation-name: rotate;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        @include darkMode {
+            background-color: $color-secondary-dark;
         }
-    
+    }
+
     &:before {
         bottom: 15vh;
         border-radius: 45%;
@@ -142,16 +163,24 @@ i {
 }
 
 @keyframes rotate {
-  0% {transform: translate(-50%, 0) rotateZ(0deg);}
-  50% {transform: translate(-50%, -2%) rotateZ(180deg);}
-  100% {transform: translate(-50%, 0%) rotateZ(360deg);}
+    0% {
+        transform: translate(-50%, 0) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -2%) rotateZ(180deg);
+    }
+
+    100% {
+        transform: translate(-50%, 0%) rotateZ(360deg);
+    }
 }
 
 
 .headline__h1 {
-    font-size: 2em;
     text-align: center;
     text-transform: uppercase;
+    hyphens: none;
     color: $color-primary;
     opacity: 0;
 
@@ -162,11 +191,15 @@ i {
     &--top {
         animation: appear 1s ease-in-out 2s forwards;
     }
-    
+
     &--bottom {
         animation: appear 1s ease-in-out 3s forwards;
     }
-    
+
+    @include darkMode {
+        color: $color-primary-dark;
+    }
+
 }
 
 .line {
@@ -182,7 +215,7 @@ i {
 }
 
 .swipe-up {
-    color: white;
+    color: $color-secondary;
     opacity: 0;
 
     margin: 1em;
@@ -195,6 +228,11 @@ i {
 
     animation: appear 1s ease-in-out 4s forwards;
 
+    @include darkMode {
+        color: $color-secondary-dark;
+    }
+
+
     & .react-icons {
         animation: move 1s ease-in-out 0s infinite;
     }
@@ -204,52 +242,71 @@ i {
     from {
         opacity: 0%;
     }
+
     to {
         opacity: 100%;
     }
-  }
+}
+
 @keyframes move {
     0% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(3px);
     }
-  }
+}
+
+// HEADER
+
+.header {
+    width: 100%;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: -1px;
+
+    z-index: 1;
+
+    @include darkMode() {
+        border-color: $color-primary-dark;
+    }
+
+}
 
 
 //... NAVIGATION
 
 .nav {
+
     width: 100%;
-
-
-    z-index: 0;
 
     &__a {
         width: 100%;
         height: 100%;
         padding: 1em;
-        text-align: start;
         color: inherit;
 
-        @include flex(row, nowrap, space-between, flex-start)
 
-        
+        @include flex(row, nowrap, space-between, center)
+    }
+
+    &__a--drop {
+        justify-content: end;
     }
 
     &__ul {
         width: 100%;
+        height: 100vh;
         background-color: $color-secondary;
         border-bottom: 1px solid $color-primary;
-        -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.4);
-        box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.4);
 
 
         display: none;
         position: absolute;
-
-        // z-index: 0;
 
         @include darkMode() {
             background-color: $color-secondary-dark;
@@ -265,12 +322,7 @@ i {
 
 .collapser {
 
-    border-bottom: 1px solid $color-primary;
     @include flex(row, nowrap, space-between, center);
-
-    @include darkMode() {
-        border-color: $color-primary-dark;
-    }
 
     &__btn {
         height: 4em;
@@ -278,8 +330,10 @@ i {
         @include flex(row, nowrap, flex-end, center);
     }
 
-    &__btn .react-icons{
-        fill: $color-secondary;
+    &__btn .react-icons {
+        fill: transparent;
+        opacity: 90%;
+        transition: fill .5s ease-in-out 0s;
     }
 }
 
@@ -288,12 +342,11 @@ i {
     height: 2em;
 
     & path {
-        fill: $color-secondary;
-        
-        @include darkMode() {
-            fill: $color-primary-dark;
-            
-        }
+        fill: transparent;
+        opacity: 90%;
+
+        transition: fill .5s ease-in-out 0s;
+
     }
 
 }
@@ -303,21 +356,47 @@ i {
     display: flex;
 }
 
+.isSticky .react-icons,
+.isSticky path {
+    fill: $color-primary;
+    transition: fill .5s ease-in-out 0s;
+
+    @include darkMode {
+        fill: $color-primary-dark;
+    }
+}
+
 // MAIN
 
 .main {
     width: 100%;
     text-align: center;
+    background-color: $color-secondary;
 
     padding: 0;
+
+    @include flex(column, nowrap, center, center);
+
+    @include darkMode {
+        background-color: $color-secondary-dark;
+    }
 }
 
 .section {
     width: 100%;
-    min-height: 60vh;
-    padding: 1em;
+    max-width: 960px;
+    min-height: 100vh;
+    padding: 2em;
 
     @include flex(column, nowrap, center, center);
+
+    @media screen and (max-width: 280px) {
+        padding: 2em .2em
+    }
+
+    @include responsive() {
+        min-height: 80vh;
+    }
 }
 
 
@@ -325,10 +404,13 @@ i {
 .section--works {
     width: 100%;
     min-height: fit-content;
-    background-color: $color-secondary;
 
-    padding: 0;
+    // padding: 0;
 
+    @include darkMode {
+
+        background-color: $color-primary;
+    }
 }
 
 .svg-box {
@@ -342,17 +424,12 @@ i {
         stroke: $color-primary;
 
         @include darkMode() {
-            stroke: $color-high;
+            stroke: $color-primary-dark;
         }
     }
 }
 
 .works {
-    &__h2 {
-        margin: 1em 0;
-
-        align-self: center;
-    }
 
     &__p {
 
@@ -362,28 +439,25 @@ i {
 
 .article {
     background-color: $color-secondary;
+    width: 100%;
 
-    
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    column-gap: 1em;
 
     @include darkMode() {
         background-color: $color-secondary-dark;
     }
-    
+
     &__h4 {
-        font-size: 1.4em;
-        text-align: start;
+        text-align: center;
 
         margin: 1rem;
 
         justify-self: center;
         align-self: center;
-
-        @include responsive() {
-            font-size: 2em;
-        }
 
     }
 
@@ -393,83 +467,59 @@ i {
         margin: 1rem;
 
         @include responsive() {
-            font-size: 2em;
+            font-size: 1.6em;
         }
 
     }
 
-    &__ul-social{
+    &__ul-social {
         font-size: 1.2em;
 
         margin: 1rem;
 
-        @include flex(column, nowrap, center,flex-start);
-        justify-self: center;
+        @include flex(column, nowrap, center, flex-start);
+        justify-self: flex-start;
         gap: 1em;
 
         @include responsive() {
-            font-size: 2em;
+            font-size: 1.6em;
         }
+    
 
     }
 
-    &__link{
+    &__link {
         @include flex(row, nowrap, center, center);
     }
 
-    &__img {
-        max-height: 50vh;
-    }
-
-    // &:nth-child(odd) {
-        .article__h4 {
-       
-            grid-row: 1 / 2;
-            grid-column: 1 / 2;
-            justify-self: start;
-        }
-        .article__ul {
-            text-align: start;
-    
-            grid-row: 2 / 3;
-            grid-column: 1 / 2;
-            justify-self: start;
-            align-self: center;
-        }
-
-        .article__ul-social{
-            grid-row: 2 / 3;
-            grid-column: 2 / 3;
-        }
-    
-        .article__img {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            justify-self: end;
-            align-self: end;
-        }
-    // }
-
-    &:nth-child(even) {
-        .article__h4 {
-    
-            grid-row: 1 / 2;
-            grid-column: 2 / 3;
-            justify-self: center;
-        }
-        
-    
-        .article__ul-social{
-            justify-self: center;
-        }
-
-        .article__img {
-            grid-row: 1 / 2;
-            grid-column: 1 / 2;
-            
+    &__link .react-icons{
+        fill: $color-link;
+        @include darkMode {
+            fill: $color-link-dark;
         }
     }
-    
+
+    .article__h4 {
+
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+        justify-self: center;
+    }
+
+    .article__ul {
+        text-align: end;
+
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .article__ul-social {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
 }
 
 
@@ -477,8 +527,10 @@ i {
 
 .bio {
 
-    &__pic{
+    &__pic {
         max-width: 7em;
+
+        margin: 0 0 1em 1em;
 
         float: right;
     }
@@ -488,15 +540,15 @@ i {
     }
 
     &__p {
-        max-width: 960px;
 
         margin: 0 0 1em;
-        
+
         text-align: left;
 
 
         @include responsive() {
             font-size: 1.2em;
+            line-height: 1.4em;
         }
     }
 }
@@ -510,13 +562,35 @@ i {
         margin: 0 1em;
 
     }
+
+    &__a .react-icons {
+        width: 2em;
+        fill: $color-primary;
+        @include darkMode {
+            fill: $color-primary-dark;
+        }
+
+        @include responsive() {
+            width: 3em;
+        }
+    }
+
+    &__a:hover .react-icons {
+        fill: $color-high;
+
+    }
 }
 
 
 // CONTACT
+.section--contact {
+    border-top: 0.5rem dotted $color-high;
+}
+
 .h2__contact {
     margin-bottom: 1rem;
 }
+
 .form {
 
     position: relative;
@@ -528,7 +602,6 @@ i {
 
     &__input {
         width: 100%;
-        // color: $color-font;
         border: 1px dashed $color-primary;
         border-radius: 5px;
 
@@ -536,7 +609,7 @@ i {
         padding: 0.5em;
 
         @include responsive() {
-            border: 2px dashed $color-primary; 
+            border: 2px dashed $color-primary;
         }
 
         @include darkMode() {
@@ -545,6 +618,7 @@ i {
 
         &::placeholder {
             color: $color-primary;
+
             @include darkMode() {
                 color: $color-primary-dark;
             }
@@ -555,12 +629,18 @@ i {
 // FOOTER
 
 .footer {
+    width: 100%;
     text-align: center;
-    
+    background-color: $color-secondary;
+
     padding: 2em 0;
-    
+
     @include responsive() {
         font-size: 1.2em;
 
+    }
+
+    @include darkMode {
+        background-color: $color-secondary-dark;
     }
 }

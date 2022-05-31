@@ -8,19 +8,12 @@
 
 // Colors
 $colors: (
-    '1' : #FFEACE,
-    '2' : #E6D3BA,
-    '3' : #BFB09B,
-    '4' : #807567,
-    '5' : #403B34,
-    '6' : #66727b,
-    '7' : #343B40,
-    '8' : #dcdfe3,
+    '8' : #e9e9ea,
     '9' : #3E4C59,
     '10' : #BF4B60,
     '11' : #594045,
     'light' : #ffffff,
-    'dark' : black
+    'dark' : #2e343a
 );
 
 // Fonts
@@ -38,16 +31,7 @@ $color-primary-dark     : map-get($colors, '8');
 $color-secondary-dark   : map-get($colors, '9');
 $color-high-dark        : map-get($colors, '11');
 $color-link             : map-get($colors, '11');
-$color-link-dark        : map-get($colors, '11');
-// // Variables
-// $color-light            : map-get($colors, 'light');
-// $color-dark             : map-get($colors, 'dark');
-// $color-primary          : map-get($colors, '3');
-// $color-secondary        : map-get($colors, '7');
-// $color-high             : map-get($colors, '6');
-// $color-primary-dark     : map-get($colors, '4');
-// $color-secondary-dark   : map-get($colors, '7');
-// $color-high-dark        : map-get($colors, '6');
+$color-link-dark        : map-get($colors, '10');
 
 
 // Fonts
@@ -202,6 +186,7 @@ td {
 svg {
     // width: 100%;
     display: block;
+    pointer-events: none; // To fix the click event
     // fill: currentColor;
 }
 
@@ -211,7 +196,7 @@ body {
     font-size: 1rem;
     font-family: $font-primary;
     color: $color-primary;
-    background-color: $color-secondary;
+    background-color: $color-primary;
     /* optional */
     // line-height: 1.4em;
     /* optional */
@@ -225,7 +210,7 @@ body {
 
     @include darkMode(){
         color: $color-primary-dark;
-        background-color: $color-secondary-dark;
+        background-color: $color-primary-dark;
     }
 }
 
