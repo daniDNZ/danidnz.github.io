@@ -4,6 +4,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pacifico Regular"), local("Pacifico-Regular"), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format("woff2");
+  font-display: swap;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none;
@@ -196,17 +204,17 @@ i {
 
 .a {
   width: fit-content;
-  color: #594045;
+  color: #BF4B60;
 }
 
 @media (prefers-color-scheme: dark) {
   .a {
-    color: #BF4B60;
+    color: #ff5b79;
   }
 }
 
 .a:hover {
-  color: #BF4B60;
+  color: #ff5b79;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -216,7 +224,7 @@ i {
 }
 
 .a:hover .react-icons {
-  fill: #BF4B60;
+  fill: #ff5b79;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -614,12 +622,12 @@ i {
 }
 
 .article__link .react-icons {
-  fill: #594045;
+  fill: #BF4B60;
 }
 
 @media (prefers-color-scheme: dark) {
   .article__link .react-icons {
-    fill: #BF4B60;
+    fill: #ff5b79;
   }
 }
 
@@ -694,11 +702,11 @@ i {
 }
 
 .social__a:hover .react-icons {
-  fill: #BF4B60;
+  fill: #ff5b79;
 }
 
 .section--contact {
-  border-top: 0.5rem dotted #BF4B60;
+  border-top: 0.5rem dotted #ff5b79;
 }
 
 .h2__contact {
@@ -778,7 +786,7 @@ i {
 }
 
 .button:hover {
-  color: #BF4B60;
+  color: #ff5b79;
 }
 
 .alert {

@@ -68,8 +68,8 @@ export default function Header() {
       <header className="header">
         <nav className="nav">
           <div className="collapser">
-            <NavLink to='/' className="nav__a a" alt="Home">
-              <figure className="figure">
+            <NavLink to='/' className="nav__a a">
+              <figure className="figure" alt="Home">
                 <Logo />
               </figure>
             </NavLink>
