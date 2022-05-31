@@ -8,7 +8,7 @@ export default function Bio() {
             <section id="bio" className="section bio">
                 <h2 className="h2 bio__h2">About</h2>
                 <p className="bio__p">
-                    <img src={dani} className="img bio__pic" alt="Dani Sanz" loading="lazy"/>
+                    <img src={dani} className="img bio__pic" alt="Dani Sanz" loading="lazy" height="188px" width="135px"/>
                     Hola! Me llamo Dani Sanz y soy <b>desarrollador web frontend.</b> Últimamente dedico casi todo mi tiempo a esto pero también
                     tengo otros hobbies como la fotografía, el senderismo, los videojuegos o la música.
                     <br />

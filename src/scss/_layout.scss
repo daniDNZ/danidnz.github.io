@@ -50,10 +50,6 @@
 }
 
 .h3 {
-    font-size: 1.6rem;
-}
-
-.h4 {
     font-size: 1.4rem;
 
     @include responsive() {
@@ -125,7 +121,7 @@ i {
     @include flex(column, nowrap, center, center);
     position: relative;
 
-    animation: appear 1s ease-in-out 0s forwards;
+    animation: appear 0.5s ease-in-out 0s forwards;
 
     @include darkMode {
         background-color: $color-primary-dark;
@@ -189,11 +185,11 @@ i {
     z-index: 1;
 
     &--top {
-        animation: appear 1s ease-in-out 2s forwards;
+        animation: appear 0.5s ease-in-out 1s forwards;
     }
 
     &--bottom {
-        animation: appear 1s ease-in-out 3s forwards;
+        animation: appear 0.5s ease-in-out 1.5s forwards;
     }
 
     @include darkMode {
@@ -211,7 +207,7 @@ i {
 
     z-index: 1;
 
-    animation: appear 1s ease-in-out 1s forwards;
+    animation: appear 0.5s ease-in-out 0.5s forwards;
 }
 
 .swipe-up {
@@ -226,7 +222,7 @@ i {
     @include flex(column, nowrap, center, center);
     gap: 0.2em;
 
-    animation: appear 1s ease-in-out 4s forwards;
+    animation: appear 0.5s ease-in-out 2s forwards;
 
     @include darkMode {
         color: $color-secondary-dark;
@@ -451,7 +447,7 @@ i {
         background-color: $color-secondary-dark;
     }
 
-    &__h4 {
+    &__h3 {
         text-align: center;
 
         margin: 1rem;
@@ -499,7 +495,7 @@ i {
         }
     }
 
-    .article__h4 {
+    .article__h3 {
 
         grid-row: 1 / 2;
         grid-column: 1 / 3;

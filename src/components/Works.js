@@ -10,7 +10,7 @@ export default function Works() {
                 <h2 className="h2 works__h2">Last works</h2>
                 <article className="article">
                     {/* <img src={w3} alt="Imagen" className="img article__img" loading="lazy" /> */}
-                    <h4 className="h4 article__h4">CODE CHALLENGES</h4>
+                    <h3 className="h3 article__h3">CODE CHALLENGES</h3>
                     <ul className="article__ul">
                         <li className="article__li">JavaScript</li>
                         <li className="article__li">REACT</li>
@@ -24,7 +24,7 @@ export default function Works() {
                 </article>
                 <article className="article">
                     {/* <img src={w2} alt="Imagen" className="img article__img" loading="lazy" /> */}
-                    <h4 className="h4 article__h4">PORTFOLIO</h4>
+                    <h3 className="h3 article__h3">PORTFOLIO</h3>
                     <ul className="article__ul">
                         <li className="article__li">REACT</li>
                         <li className="article__li">HTML5</li>
@@ -37,7 +37,7 @@ export default function Works() {
                 </article>
                 <article className="article">
                     {/* <img src={marabu} alt="Imagen" className="img article__img" loading="lazy" /> */}
-                    <h4 className="h4 article__h4">MARABÚ</h4>
+                    <h3 className="h3 article__h3">MARABÚ</h3>
                     <ul className="article__ul">
                         <li className="article__li">REACT</li>
                         <li className="article__li">SYMFONY</li>

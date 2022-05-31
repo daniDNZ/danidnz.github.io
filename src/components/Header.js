@@ -68,12 +68,12 @@ export default function Header() {
       <header className="header">
         <nav className="nav">
           <div className="collapser">
-            <NavLink to='/' className="nav__a a">
+            <NavLink to='/' className="nav__a a" alt="Home">
               <figure className="figure">
                 <Logo />
               </figure>
             </NavLink>
-            <button className="nav__a a collapser__btn" onClick={() => toggle('.nav__collapse')}>
+            <button className="nav__a a collapser__btn" aria-label="Despliega el menú" onClick={() => toggle('.nav__collapse')}>
               <FaFingerprint />
             </button>
           </div>
