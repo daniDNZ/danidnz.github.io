@@ -3,7 +3,7 @@
  xmlns="http://www.w3.org/2000/svg"
  xmlns:xlink="http://www.w3.org/1999/xlink"
  viewBox="0 0 500 500"
- width="120" height="120">
+ width="120" height="120" >
 <path fill-rule="evenodd"  fill-opacity="0.502" opacity="0.502" fill="rgb(255, 255, 255)"
  d="M288.342,499.999 L288.342,0.7 L0.531,0.7 L0.531,499.999 L288.342,499.999 ZM36.245,35.721 L252.629,35.721 L252.629,464.286 L36.245,464.286 L36.245,35.721 Z"/>
 <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
