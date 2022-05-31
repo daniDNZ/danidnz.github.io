@@ -15,7 +15,7 @@ $colors: (
     '5' : #403B34,
     '6' : #66727b,
     '7' : #343B40,
-    '8' : #B8BBBF,
+    '8' : #dcdfe3,
     '9' : #3E4C59,
     '10' : #BF4B60,
     '11' : #594045,
@@ -37,6 +37,8 @@ $color-high             : map-get($colors, '10');
 $color-primary-dark     : map-get($colors, '8');
 $color-secondary-dark   : map-get($colors, '9');
 $color-high-dark        : map-get($colors, '11');
+$color-link             : map-get($colors, '11');
+$color-link-dark        : map-get($colors, '11');
 // // Variables
 // $color-light            : map-get($colors, 'light');
 // $color-dark             : map-get($colors, 'dark');
@@ -200,7 +202,7 @@ td {
 svg {
     // width: 100%;
     display: block;
-    fill: currentColor;
+    // fill: currentColor;
 }
 
 // General Typo

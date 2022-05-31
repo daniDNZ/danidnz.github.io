@@ -1,27 +1,17 @@
-import './styles.css';
-import Navigation from './components/Navigation';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Main from './components/Main';
+import Header from './components/Header';
 import Footer from './components/Footer';
+import { IconContext } from 'react-icons';
 
 function App() {
   return (
-    <div className="app">
-      <BrowserRouter>
-        <header className="header">
-          <Navigation />
-        </header>
-        <main className="main">
-
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Home />} />
-          </Routes>
-
-        </main>
+    <>
+      <IconContext.Provider value={{ className: 'react-icons' }}>
+        <Header />
+          <Main />
         <Footer />
-      </BrowserRouter>
-    </div>
+      </IconContext.Provider>
+    </>
   );
 }
 

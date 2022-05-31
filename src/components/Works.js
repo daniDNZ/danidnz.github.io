@@ -3,6 +3,7 @@ import w2 from "../img/works2/w2-thumb.webp";
 import w3 from "../img/works3/w3-thumb.webp";
 import marabu from "../img/works1/marabup.webp";
 import { RiExternalLinkLine } from 'react-icons/ri';
+import { ReactComponent as Box } from "../img/svg/box.svg";
 
 
 export default function Works() {
@@ -76,6 +77,7 @@ export default function Works() {
     return (
         <>
             <section id="works" className="section section--works">
+                <Box />
                 <h2 className="h2 works__h2">Last works</h2>
             </section>
             <div className="sticky-container">

@@ -1,5 +1,5 @@
 // MIXINS
-@mixin responsive($width: 810px) {
+@mixin responsive($width: 768px) {
 
     @media screen and (min-width: $width) {
         @content;
@@ -7,52 +7,43 @@
 
 }
 
-@mixin responsiveDesktop($width: 960px) {
-
-    @media screen and (min-width: $width) {
-        @content;
-    }
-
-}
-
-@mixin flex($direction , $wrap , $just , $align ) {
+@mixin flex($direction: column, $wrap: wrap, $justify: center, $align: center) {
     display: flex;
     flex-flow: $direction $wrap;
-    justify-content: $just;
+    justify-content: $justify;
     align-items: $align;
 }
 
-@mixin grid($columns , $space ) {
+@mixin grid($columns: 1, $rows: 1, $gap: 0) {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0em;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+    gap: $gap;
+}
 
-    @include responsive(768px) {
-        grid-template-columns: repeat($columns, 1fr);
-        gap: $space;
-    }
+#root {
+    
+    @include flex(column, nowrap, flex-start, center);
+
 }
 
 // GLOBAL
+.h1,
+.h2,
+.h3 {
+    margin: 1em 0 0.5em 0;
+}
 
-body {
-    
-    @include responsive(768px) {
-        max-width: 1500px;
-        font-size: 1.1rem;
-
-        margin: 0 auto;
-    }
+.h1 {
+    font-size: 1.8rem;
 }
 
 .h2 {
-    font-size: 2em;
-    @include responsive() {
-        font-size: 4em;
-    }
-    @include responsiveDesktop() {
-        font-size: 6em;
-    }
+    font-size: 1.6rem;
+}
+
+.h3 {
+    font-size: 1.4rem;
 }
 
 b {
@@ -63,12 +54,18 @@ i {
     font-style: oblique;
 }
 
-.a:hover {
-    color: $color-high;
+.a {
+    width: fit-content;
+    color: $color-link;
+
+    @include darkMode() {
+        color: $color-link-dark;
+    }
+
+    &:hover {
+        color: $color-high;
+    }
 }
-
-
-
 
 .img {
     mix-blend-mode:darken;
@@ -80,95 +77,221 @@ i {
     }
 }
 
+.react-icons {
+    vertical-align: middle;
+    align-self: center;
+    fill: $color-primary;
+
+    z-index: -1;
+}
+
 // HEADER
 
 .header {
-    // background: $color-dark;
-    // width: 100%;
-    // min-height: 5em;
-
-    // padding: 1em 2em;
-
-    // @include flex(row, wrap, space-between, center);
-
-    display: none;
-}
-
-
-
-//... NAVIGATION
-
-// .nav {
-
-//     &__ul {
-//         @include flex(row, wrap, space-between, center);
-//     }
-
-//     &__li {
-//         margin: 0 1em;
-//     }
-// }
-
-// MAIN
-
-.main {
-    text-align: center;
-}
-
-.section {
     width: 100%;
-    min-height: 88vh;
-    padding: 2em;
+    background-color: $color-primary;
 
-    @include flex(column, wrap, center, center);
+    position:sticky;
+    position:-webkit-sticky;
+    top: 0;
+
+    @include darkMode() {
+        border-color: $color-primary-dark;
+    }
+
 }
 
 // HEADLINE
 
-.section--headline {
-    padding: 0;
+.headline {
+    height: 100vh;
+    background-color: $color-primary;
+    overflow: hidden;
+    opacity: 0;
+
+    justify-content: flex-start;
+    position: relative;
+
+    animation: appear 1s ease-in-out 0s forwards;
+
+    &:before,
+    &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            min-width: 300vw;
+            min-height: 300vw;
+            background-color: $color-secondary;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    
+    &:before {
+        bottom: 15vh;
+        border-radius: 45%;
+        animation-duration: 10s;
+    }
+
+    &:after {
+        bottom: 12vh;
+        opacity: .5;
+        border-radius: 47%;
+        animation-duration: 10s;
+    }
 }
 
-.square{
-    background-color: $color-high-dark;
-    width: 100%;
-    // height: 100%;
-    padding-top: 1em;
-    
-    grid-row: 1 / 3;
-    grid-column: 1 / 2;
-    position: relative;
-    
-    @include responsive() {
-        grid-row: 1 / 2;
+@keyframes rotate {
+  0% {transform: translate(-50%, 0) rotateZ(0deg);}
+  50% {transform: translate(-50%, -2%) rotateZ(180deg);}
+  100% {transform: translate(-50%, 0%) rotateZ(360deg);}
+}
+
+
+.headline__h1 {
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-primary;
+    opacity: 0;
+
+    margin: 1em 0;
+
+    z-index: 1;
+
+    &--top {
+        animation: appear 1s ease-in-out 2s forwards;
     }
     
-    @include darkMode() {
+    &--bottom {
+        animation: appear 1s ease-in-out 3s forwards;
+    }
+    
+}
+
+.line {
+    height: 1px;
+    width: 80vw;
+    border: 0.5px solid black;
+    opacity: 0;
+
+
+    z-index: 1;
+
+    animation: appear 1s ease-in-out 1s forwards;
+}
+
+.swipe-up {
+    color: white;
+    opacity: 0;
+
+    margin: 1em;
+
+    position: absolute;
+    bottom: 0;
+
+    @include flex(column, nowrap, center, center);
+    gap: 0.2em;
+
+    animation: appear 1s ease-in-out 4s forwards;
+
+    & .react-icons {
+        animation: move 1s ease-in-out 0s infinite;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+  }
+@keyframes move {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(3px);
+    }
+  }
+
+
+//... NAVIGATION
+
+.nav {
+    width: 100%;
+
+
+    z-index: 0;
+
+    &__a {
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+        text-align: start;
+        color: inherit;
+
+        @include flex(row, nowrap, space-between, flex-start)
+
         
-        background-color: $color-high;
+    }
+
+    &__ul {
+        width: 100%;
+        background-color: $color-secondary;
+        border-bottom: 1px solid $color-primary;
+        -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.4);
+
+
+        display: none;
+        position: absolute;
+
+        // z-index: 0;
+
+        @include darkMode() {
+            background-color: $color-secondary-dark;
+            border-color: $color-primary-dark;
+        }
+    }
+
+    &__dropdown {
+        display: none;
+    }
+
+}
+
+.collapser {
+
+    border-bottom: 1px solid $color-primary;
+    @include flex(row, nowrap, space-between, center);
+
+    @include darkMode() {
+        border-color: $color-primary-dark;
+    }
+
+    &__btn {
+        height: 4em;
+
+        @include flex(row, nowrap, flex-end, center);
+    }
+
+    &__btn .react-icons{
+        fill: $color-secondary;
     }
 }
 
 .logo {
-    width: 5em;
-    height: 5em;
-
-    margin: 1vw;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    @include responsive() {
-        width: 8em;
-        height: 8em;
-    }
+    width: 2em;
+    height: 2em;
 
     & path {
         fill: $color-secondary;
         
         @include darkMode() {
-            fill: $color-secondary-dark;
+            fill: $color-primary-dark;
             
         }
     }
@@ -176,128 +299,52 @@ i {
 }
 
 .figure {
-    position: relative;
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-
+    width: fit-content;
+    display: flex;
 }
 
-.headline {
-    &__section {
-        min-height: 100vh;
-        width: 100%;
+// MAIN
 
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 0.5fr 1fr 1fr;
+.main {
+    width: 100%;
+    text-align: center;
 
-        @include responsive() {
-            grid-template-rows: 1fr 0.5fr 1fr;
-        }
-
-    }
-
-    &__h3 {
-        hyphens: none;
-        font-size: 2.5em;
-        line-height: 0.8em;
-        font-weight: 400;
-        text-transform: lowercase;
-        text-align: start;
-
-        transform: scaleY(1.3);
-
-        margin: 0.5em 1rem 1rem;
-
-        grid-row: 4 / 5;
-        grid-column: 1 / 3;
-        align-self: start;
-        justify-self: start;
-
-        @include responsive() {
-            font-size: 4em;
-
-            grid-row: 3 / 4;
-        }
-        @include responsiveDesktop() {
-            font-size: 6em;
-        }
-    }
-
+    padding: 0;
 }
 
-.h-menu {
+.section {
+    width: 100%;
+    min-height: 60vh;
+    padding: 1em;
 
-    text-transform: uppercase;
-
-    margin: 1em;
-
-    @include flex(column, wrap, center, center);
-    gap: 2em;
-    
-    grid-row: 1 / 5;
-    grid-column: 2 / 3;
-    justify-self: center;
-    align-self: start;
-    
-    @include responsive() {
-        
-        @include flex(column, wrap, center, flex-end);
-        grid-row: 1 / 4;
-        justify-self: end;
-    }
-
-    &__a {
-        font-size: 1.8em;
-        font-weight: 400;
-        hyphens: none;
+    @include flex(column, nowrap, center, center);
+}
 
 
+// // WORKS
+.section--works {
+    width: 100%;
+    min-height: fit-content;
+    background-color: $color-secondary;
 
-        @include responsive() {
-            font-size: 3em;
-        }
-
-        @include responsiveDesktop() {
-            font-size: 5em;
-        }
-    }
-
-    &__li {
-        margin-bottom: 1em;
-    }
+    padding: 0;
 
 }
 
 .svg-box {
     width: 100%;
-    min-height: 100%;
 
-    grid-row: 3/4;
-    grid-column: 1 / 2;
-    align-self: start;
-    justify-self: start;
+    align-self: flex-end;
+    justify-self: flex-end;
 
-    @include responsive() {
-        grid-row: 2 / 3;
-    }
 
     & line {
-        stroke: $color-high-dark;
+        stroke: $color-primary;
 
         @include darkMode() {
             stroke: $color-high;
         }
     }
-}
-
-// // WORKS
-.section--works {
-    min-height: fit-content;
-
-    padding-inline: 0;
-    padding-bottom: 0;
-
 }
 
 .works {
@@ -313,18 +360,7 @@ i {
     }
 }
 
-// .sticky-container__div {
-//     overflow-x: hidden;
-//     overflow-y: hidden;
-//     display: flex;
-//     flex-flow: row;
-//     position: sticky;
-//     top: 0;
-// }
-
 .article {
-    // min-width: 80vw;
-    // min-height: 80vh;
     background-color: $color-secondary;
 
     
@@ -348,9 +384,7 @@ i {
         @include responsive() {
             font-size: 2em;
         }
-        @include responsiveDesktop() {
-            font-size: 4em;
-        }
+
     }
 
     &__ul {
@@ -360,9 +394,6 @@ i {
 
         @include responsive() {
             font-size: 2em;
-        }
-        @include responsiveDesktop() {
-            font-size: 3em;
         }
 
     }
@@ -379,9 +410,7 @@ i {
         @include responsive() {
             font-size: 2em;
         }
-        @include responsiveDesktop() {
-            font-size: 3em;
-        }
+
     }
 
     &__link{
@@ -428,14 +457,7 @@ i {
             grid-column: 2 / 3;
             justify-self: center;
         }
-    //     .article__ul {
-    //         text-align: end;
-    
-    //         grid-column: 2 / 3;
-    //         grid-row: 1 / 2;
-    //         justify-self: end;
-    //         align-self:  center;
-    //     }
+        
     
         .article__ul-social{
             justify-self: center;
@@ -447,12 +469,7 @@ i {
             
         }
     }
-
-    // &:last-child {
-    //     background-color: $color-7;
-    // }
-
-
+    
 }
 
 
