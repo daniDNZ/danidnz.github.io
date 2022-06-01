@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { NavLink } from "react-bootstrap";
 import Headline from "../components/Headline";
 import { ReactComponent as Logo } from "../img/svg/logo.svg";
 import { FaFingerprint } from "react-icons/fa";
@@ -68,19 +67,19 @@ export default function Header() {
       <header className="header">
         <nav className="nav">
           <div className="collapser">
-            <NavLink to='/' className="nav__a a">
-              <figure className="figure" alt="Home">
+            <a href="#headline" className="nav__a a" title="Home">
+              <figure className="figure" alt="Home logo">
                 <Logo />
               </figure>
-            </NavLink>
+            </a>
             <button className="nav__a a collapser__btn" aria-label="Despliega el menú" onClick={() => toggle('.nav__collapse')}>
               <FaFingerprint />
             </button>
           </div>
           <ul className="nav__ul nav__collapse">
-            <li className="nav__li"><NavLink href="#works" className="nav__a nav__a--drop a" title="works">works</NavLink></li>
-            <li className="nav__li"><NavLink href="#bio" className="nav__a nav__a--drop a" title="bio">about</NavLink></li>
-            <li className="nav__li"><NavLink href="#contact" className="nav__a nav__a--drop a" title="contact">contact</NavLink></li>
+            <li className="nav__li"><a href="#works" className="nav__a nav__a--drop a" title="works">works</a></li>
+            <li className="nav__li"><a href="#bio" className="nav__a nav__a--drop a" title="bio">about</a></li>
+            <li className="nav__li"><a href="#contact" className="nav__a nav__a--drop a" title="contact">contact</a></li>
           </ul>
         </nav>
       </header>
