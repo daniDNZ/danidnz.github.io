@@ -10,7 +10,7 @@ export default function Works() {
                 <h2 className="h2 works__h2">Last works</h2>
                 <article className="article">
                     {/* <img src={w3} alt="Imagen" className="img article__img" loading="lazy" /> */}
-                    <h3 className="h3 article__h3">CLARA MARTÍNEZ ATV</h3>
+                    <h3 className="h3 article__h3">CLARA MARTÍNEZ ATV (en desarrollo)</h3>
                     <ul className="article__ul">
                         <li className="article__li">JavaScript</li>
                         <li className="article__li">REACT</li>
