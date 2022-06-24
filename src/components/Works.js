@@ -10,6 +10,20 @@ export default function Works() {
                 <h2 className="h2 works__h2">Last works</h2>
                 <article className="article">
                     {/* <img src={w3} alt="Imagen" className="img article__img" loading="lazy" /> */}
+                    <h3 className="h3 article__h3">Twitter Mirroring (Versión web smartphones y tablets)</h3>
+                    <ul className="article__ul">
+                        <li className="article__li">JavaScript</li>
+                        <li className="article__li">REACT</li>
+                        <li className="article__li">HTML5</li>
+                        <li className="article__li">SASS</li>
+                    </ul>
+                    <ul className="article__ul-social">
+                        <li className="article__li-social"><a href="https://danidnz.github.io/TwitterMirroring/" className="a article__link" title="Demo UI Twitter" target="_blank" rel="noreferrer noopener">Demo <RiExternalLinkLine /></a></li>
+                        <li className="article__li-social"><a href="https://github.com/daniDNZ/TwitterMirroring" className="a article__link" title="Repositorio" target="_blank" rel="noreferrer noopener">GitHub <RiExternalLinkLine /></a></li>
+                    </ul>
+                </article>
+                <article className="article">
+                    {/* <img src={w3} alt="Imagen" className="img article__img" loading="lazy" /> */}
                     <h3 className="h3 article__h3">CLARA MARTÍNEZ ATV (en desarrollo)</h3>
                     <ul className="article__ul">
                         <li className="article__li">JavaScript</li>
@@ -18,7 +32,7 @@ export default function Works() {
                         <li className="article__li">SASS</li>
                     </ul>
                     <ul className="article__ul-social">
-                        <li className="article__li-social"><a href="https://danidnz.github.io/claramartinezatv/" className="a article__link" title="Demo Marabú" target="_blank" rel="noreferrer noopener">Demo <RiExternalLinkLine /></a></li>
+                        <li className="article__li-social"><a href="https://danidnz.github.io/claramartinezatv/" className="a article__link" title="Demo web Clara Martínez" target="_blank" rel="noreferrer noopener">Demo <RiExternalLinkLine /></a></li>
                         <li className="article__li-social"><a href="https://github.com/daniDNZ/claramartinezatv" className="a article__link" title="Repositorio" target="_blank" rel="noreferrer noopener">GitHub <RiExternalLinkLine /></a></li>
                     </ul>
                 </article>
@@ -32,7 +46,7 @@ export default function Works() {
                         <li className="article__li">SASS</li>
                     </ul>
                     <ul className="article__ul-social">
-                        <li className="article__li-social"><a href="https://danidnz.github.io/code-challenges/" className="a article__link" title="Demo Marabú" target="_blank" rel="noreferrer noopener">Demo <RiExternalLinkLine /></a></li>
+                        <li className="article__li-social"><a href="https://danidnz.github.io/code-challenges/" className="a article__link" title="Demo Code Challenges" target="_blank" rel="noreferrer noopener">Demo <RiExternalLinkLine /></a></li>
                         <li className="article__li-social"><a href="https://github.com/daniDNZ/code-challenges" className="a article__link" title="Repositorio" target="_blank" rel="noreferrer noopener">GitHub <RiExternalLinkLine /></a></li>
                     </ul>
                 </article>
@@ -60,7 +74,7 @@ export default function Works() {
                     </ul>
                     <ul className="article__ul-social">
                         <li className="article__li-social"><a href="https://danidnz.github.io/Marabu/" className="a article__link" title="Demo Marabú" target="_blank" rel="noreferrer noopener">Demo <RiExternalLinkLine /></a></li>
-                        <li className="article__li-social"><a href="https://github.com/daniDNZ/Marabu" className="a article__link" title="Repositorio" target="_blank" rel="noreferrer noopener">GitHub <RiExternalLinkLine /></a></li>
+                        <li className="article__li-social"><a href="https://github.com/daniDNZ/CSP_GestionVeterinaria" className="a article__link" title="Repositorio" target="_blank" rel="noreferrer noopener">GitHub <RiExternalLinkLine /></a></li>
                     </ul>
                 </article>
             </section>
